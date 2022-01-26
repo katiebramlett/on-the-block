@@ -9,12 +9,8 @@ function Contracts() {
             <h1 class="font-weight-light">My Contracts</h1>
             <br></br>
             <h5>Current Contracts</h5>
-            <p>
-            </p>
             <br></br>
             <h5>Previous Contracts</h5>
-            <p>
-            </p>
           </div>
         </div>
       </div>

@@ -23,8 +23,8 @@
     box-shadow: #00c3ffe0;
 }*/
 
-form h1 {
-    color: var(--white);
+h1 {
+    color: var(--blue);
     font-weight: 500;
 }
 

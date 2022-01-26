@@ -10,13 +10,6 @@ function Navigation() {
           <NavLink className="navbar-brand" to="/">
             On The Block
           </NavLink>
-          <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src={img}
-              alt=""
-              width="70"
-              height="42"
-            />
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">

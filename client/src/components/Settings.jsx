@@ -7,12 +7,11 @@ function Settings() {
         <div class="row align-items-center my-5">
           <div class="col-lg-5">
             <h1 class="font-weight-light">Settings</h1>
-            <p>
-              Name: <br></br>
-              Username: <br></br>
-              Password: **** <br></br>
-              Wallets: **** <br></br>
-            </p>
+            <br></br>
+            <label for="fname">First Name:</label><br></br>
+            <label for="fname">Last Name:</label><br></br>
+            <label for="fname">Username:</label><br></br>
+            <label for="fname">Password:</label><br></br>
           </div>
         </div>
       </div>

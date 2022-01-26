@@ -19,10 +19,11 @@ function Home() {
           </div>
           <div class="col-lg-5">
             <h1 class="font-weight-light">On The Block</h1>
+            <br></br>
+            <h4>Get <b>SMART</b> with your rental contracts.</h4>
+            <br></br>
             <p>
-              Get <b>SMART</b> with your rental contracts.
-              <br></br><br></br>
-              On the Block, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely, recurring rental payments.
+              <b>On The Block</b>, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely, recurring rental payments.
             </p>
           </div>
         </div>
