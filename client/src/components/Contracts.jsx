@@ -8,7 +8,9 @@ function Contracts() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">My Contracts</h1>
             <p>
-              CURRENT AND PREVIOUS RENTAL CONTRACTS
+              Current Contracts<br></br>
+              <br></br>
+              Previous Contracts<br></br>
             </p>
           </div>
         </div>

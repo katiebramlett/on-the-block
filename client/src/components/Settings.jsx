@@ -8,7 +8,10 @@ function Settings() {
           <div class="col-lg-5">
             <h1 class="font-weight-light">Settings</h1>
             <p>
-              SETTINGS
+              Name: <br></br>
+              Username: <br></br>
+              Password: **** <br></br>
+              Wallets: **** <br></br>
             </p>
           </div>
         </div>
