@@ -19,3 +19,13 @@ a:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.349);
 }
+
+:root {
+  --blue: #00c3ffe0;
+  --darkgray: rgba(0, 0, 0, 0.884);
+  --white: #ffffffec;
+}
+
+body {
+  background-color: var(--darkgray);
+}

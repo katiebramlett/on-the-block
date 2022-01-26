@@ -1,4 +1,5 @@
 import React from "react";
+import "../assets/test.css"
 
 import img from '../assets/logo.png';
 
@@ -12,8 +13,8 @@ function Home() {
               class="img-fluid rounded mb-4 mb-lg-0"
               src={img}
               alt=""
-              width="500"
-              height="300"
+              width="350"
+              height="210"
             />
           </div>
           <div class="col-lg-5">

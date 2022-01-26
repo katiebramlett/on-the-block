@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RentalContract from "../contracts/RentalContract.json";
 import getWeb3 from "../getWeb3";
+import "../assets/NewContract.css"
 
 class NewContract extends Component {
 
