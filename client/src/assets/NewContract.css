@@ -1,0 +1,77 @@
+/* Time to dark theme */
+
+:root {
+    --blue: #00c3ffe0;
+    --darkgray: rgba(0, 0, 0, 0.884);
+    --white: #ffffffec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--darkgray);
+}
+
+form {
+    width: 700px;
+    padding: 50px;
+    /*position: fixed;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    box-shadow: #00c3ffe0;
+}
+
+form h1 {
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+form input[type='text']
+{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #00c3ffe0;
+    border-radius: 12px;
+    border-bottom: 1px solid var(--blue);
+}
+
+form input[type='submit']
+{
+    border: none;
+    background: none;
+    display: block;
+    margin: 45px auto 20px auto;
+    text-align: center;
+    border: 1px solid var(--blue);
+    padding: 14px 40px;
+    outline: none;
+    color: var(--white);
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+form input[type='submit']:hover {
+    background-color: var(--blue);
+}
+
+form span {
+    color: grey;
+    font-size: 12px;
+}
+
+form a {
+    font-size: 12px;
+    color: var(--blue);
+    text-transform: none;
+    text-decoration: none;
+}
+
+label {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--white);
+}

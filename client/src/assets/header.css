@@ -1,0 +1,94 @@
+/* 
+    Custom styling for my header file 
+    Created using Figma (kinda) 
+*/
+
+/* this can be used for fonts or icons */
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap');
+
+:root {
+    --blue: #00c3ffe0;
+    --darkgray: rgba(0, 0, 0, 0.884);
+    --white: #ffffffec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+h2 {
+    color: var(--blue);
+    font-family: 'Lato', sans-serif;
+}
+
+/* Set nav attributes */
+
+.nav {
+    position:relative;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: space-between;
+    background: var(--darkgray);
+    height: 77px;
+}
+
+.logo {
+    width:140px;
+    height: 70px;
+}
+
+.nav i {
+    padding: 00px 7px;
+    cursor: pointer;
+    color: --blue;
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav li {
+    padding: 00px 40px;
+    display: inline-block;
+}
+
+.nav a {
+    color: var(--white);
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: var(--blue);
+    transition: all 0.3s ease 0s;
+}
+
+.nav i:hover {
+    color: var(--white);
+    transition: all 0.3s ease 0s;
+}
+
+.nav .left {
+    flex:1;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: row;
+    
+}
+
+.right {
+    color: var(--blue);
+    flex:1;
+}
+
+.middle {
+    flex:1;
+}
+

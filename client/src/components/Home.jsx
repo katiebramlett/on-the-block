@@ -1,5 +1,7 @@
 import React from "react";
 
+import img from '../assets/logo.png';
+
 function Home() {
   return (
     <div className="home">
@@ -8,17 +10,18 @@ function Home() {
           <div class="col-lg-7">
             <img
               class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
+              src={img}
               alt=""
+              width="500"
+              height="300"
             />
           </div>
           <div class="col-lg-5">
-            <h1 class="font-weight-light">Home page</h1>
+            <h1 class="font-weight-light">On The Block</h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              Get <b>SMART</b> with your rental contracts.
+              <br></br><br></br>
+              On the Block, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely, recurring rental payments.
             </p>
           </div>
         </div>
