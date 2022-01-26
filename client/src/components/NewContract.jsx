@@ -73,7 +73,7 @@ class NewContract extends Component {
     + this.state.monthly_amount + ', and the number of months is ' + this.state.num_months + '.');
     }
     else {
-      alert('Contracts was null.');
+      alert('Contract was null.');
     }
 
     event.preventDefault();

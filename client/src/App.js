@@ -1,4 +1,19 @@
 /*
+import React, { Component } from "react";
+import getWeb3 from "./getWeb3";
+import "./App.css";
+
+class App extends Component {
+
+  runExample = async () => {
+    const { accounts, contract } = this.state;
+  };
+}
+
+export default App
+*/
+
+/*
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
