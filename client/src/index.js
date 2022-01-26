@@ -7,6 +7,7 @@ import {
   Navigation,
   Footer,
   Home,
+  About,
   NewContract,
   Contracts,
   Settings,
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Navigation />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
       <Route path="/newContract" element={<NewContract />} />
       <Route path="/contracts" element={<Contracts />} />
       <Route path="/settings" element={<Settings />} />

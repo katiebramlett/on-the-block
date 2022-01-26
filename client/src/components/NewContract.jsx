@@ -89,10 +89,14 @@ class NewContract extends Component {
                 <p>
                   Start a New Rental Contract
                 </p>
-                <input type="text" placeholder="Landlord account number" name="l_account_num" onChange={this.handleInputChange}></input>
-                <input type="text" placeholder="Tenant account number" name="t_account_num" onChange={this.handleInputChange}></input>
-                <input type="text" placeholder="Monthly Amount" name="monthly_amount" onChange={this.handleInputChange}></input>
-                <input type="text" placeholder="Number of Months" name="num_months" onChange={this.handleInputChange}></input>
+                <input type="text" placeholder="Landlord Account Number" name="l_account_num" onChange={this.handleInputChange}></input><br></br>
+                <br></br>
+                <input type="text" placeholder="Tenant Account Number" name="t_account_num" onChange={this.handleInputChange}></input><br></br>
+                <br></br>
+                <input type="text" placeholder="Monthly Amount" name="monthly_amount" onChange={this.handleInputChange}></input><br></br>
+                <br></br>
+                <input type="text" placeholder="Number of Months" name="num_months" onChange={this.handleInputChange}></input><br></br>
+                <br></br>
                 <input type="submit" value="Submit Contract"></input>
               </div>
             </div>
