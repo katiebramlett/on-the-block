@@ -7,11 +7,9 @@ import {
   Navigation,
   Footer,
   Home,
-  About,
-  Contact,
-  Blog,
-  Posts,
-  Post,
+  NewContract,
+  Contracts,
+  Settings,
 } from "./components";
 
 ReactDOM.render(
@@ -19,12 +17,9 @@ ReactDOM.render(
     <Navigation />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/blog" element={<Blog />}>
-        <Route path="" element={<Posts />} />
-        <Route path=":postSlug" element={<Post />} />
-      </Route>
+      <Route path="/newContract" element={<NewContract />} />
+      <Route path="/contracts" element={<Contracts />} />
+      <Route path="/settings" element={<Settings />} />
     </Routes>
     <Footer />
   </Router>,
