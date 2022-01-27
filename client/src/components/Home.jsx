@@ -7,6 +7,7 @@ function Home() {
   return (
     <div className="home">
       <div class="container">
+        <br></br><br></br>
         <div class="row align-items-center my-5">
           <div class="col-lg-7">
             <img
