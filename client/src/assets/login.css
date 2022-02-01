@@ -9,7 +9,6 @@
     --blue: #00c3ffe0;
     --white: #ffffffec;
     --darkgray: rgba(0, 0, 0, 0.884);
-
 }
 
 .login-wrapper {
@@ -24,7 +23,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     box-shadow: #00c3ffe0;
-    background-color: var(--darkgray);
+    background-color: #212529;
 
 }
 
@@ -33,7 +32,6 @@
     font-weight: 500;
     padding: 40px;
     text-transform: uppercase;
-
 }
 
 .login-wrapper input[type='text'], form input[type='password']
@@ -45,9 +43,11 @@
     text-align: center;
     padding: 14px 10px;
     width: 200px;
-    outline: none;
+    height: 40px;
     color: var(--white);
     border-bottom: 1px solid var(--blue);
+    border: 1px solid #00c3ffe0;
+    border-radius: 24px;
 }
 
 .login-wrapper button {
@@ -63,6 +63,7 @@
     color: var(--white);
     border-radius: 24px;
     cursor: pointer;
+    width: 185px;
 }
 
 .login-wrapper input[type='submit']:hover {
