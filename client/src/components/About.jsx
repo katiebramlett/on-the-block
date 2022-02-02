@@ -7,10 +7,10 @@ function About() {
   return (
     /*
     <div className="contracts">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">About On The Block</h1>
+      <div className="container">
+        <div className="row align-items-center my-5">
+          <div className="col-lg-5">
+            <h1 className="font-weight-light">About On The Block</h1>
             <h4>How It Works</h4>
             <p>
               On the Block, our Ethereum decentralized application, allows users to easily interact with a smart contract to set up timely, recurring monthly payments. By utilizing blockchain technology, specifically an Ethereum-based application, we are alleviating the tedious and complicated process of paying rent to a landlord.<br></br>
@@ -30,13 +30,13 @@ function About() {
     */
   
     <div className="home">
-      <div class="container">
+      <div className="container">
         <br></br><br></br>
-        <h1 class="font-weight-light">About On The Block</h1>
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
+        <h1 className="font-weight-light">About On The Block</h1>
+        <div className="row align-items-center my-5">
+          <div className="col-lg-7">
           <img
-              class="img-fluid rounded mb-4 mb-lg-0"
+              className="img-fluid rounded mb-4 mb-lg-0"
               src={img}
               alt=""
               width="200"
@@ -48,7 +48,7 @@ function About() {
               On the Block, our Ethereum decentralized application, allows users to easily interact with a smart contract to set up timely, recurring monthly payments. By utilizing blockchain technology, specifically an Ethereum-based application, we are alleviating the tedious and complicated process of paying rent to a landlord.
             </p>
           </div>
-          <div class="col-lg-5">
+          <div className="col-lg-5">
             <br></br>
             <h3>Benefits & Features</h3>
             <p>

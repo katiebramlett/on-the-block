@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import useToken from './useToken';
+import useToken from './utils/useToken';
 
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation/>
+      <Navigation setToken={setToken}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

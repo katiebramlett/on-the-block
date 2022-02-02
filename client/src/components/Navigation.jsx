@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+
+import PropTypes from 'prop-types';
+
 import img from '../assets/logo.png';
 
-function Navigation() {
+function Navigation({ setToken }) {
+
+  /* Remove session token of a logged in user */
+  
+  const removeToken = async e => {
+    e.preventDefault();
+    setToken('');
+    sessionStorage.clear();
+  }
+
   return (
     <div className="navigation">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -38,6 +50,11 @@ function Navigation() {
                   Settings
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/" onClick={removeToken}>
+                  Logout
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -45,5 +62,12 @@ function Navigation() {
     </div>
   );
 }
+
+
+/* Proptypes check for if the system data matched expected types during runtime */
+Navigation.propTypes = {
+  setToken: PropTypes.func.isRequired
+}
+
 
 export default Navigation;

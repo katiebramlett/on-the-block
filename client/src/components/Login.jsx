@@ -50,7 +50,7 @@ function Login({ setToken }) {
         </div>
     );
 }
-
+/* Proptypes check for if the system data matched expected types during runtime */
 Login.propTypes = {
     setToken: PropTypes.func.isRequired
 }

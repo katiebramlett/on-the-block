@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RentalContract from "../contracts/RentalContract.json";
-import getWeb3 from "../getWeb3";
+import getWeb3 from "../utils/getWeb3";
 import "../assets/NewContract.css"
 
 class NewContract extends Component {
@@ -92,10 +92,10 @@ class NewContract extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="newContract">
-          <div class="container">
-            <div class="row align-items-center my-5">
-              <div class="col-lg-5">
-                <h1 class="font-weight-light">Start New Contract</h1>
+          <div className="container">
+            <div className="row align-items-center my-5">
+              <div className="col-lg-5">
+                <h1 className="font-weight-light">Start New Contract</h1>
                 <p>
                   Start a New Rental Contract
                 </p>
