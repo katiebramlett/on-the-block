@@ -22,9 +22,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    box-shadow: #00c3ffe0;
     background-color: #212529;
-
+    border: 2px solid var(--blue);
 }
 
 .login-wrapper h1 {
@@ -66,7 +65,7 @@
     width: 185px;
 }
 
-.login-wrapper input[type='submit']:hover {
+.login-wrapper button:hover {
     background-color: var(--blue);
 }
 

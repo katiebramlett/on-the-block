@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
+import useToken from './useToken';
+
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
@@ -14,11 +16,9 @@ import {
 } from "./components";
 
 
-import "./App.css";
-
 function App() {
   /* Check for logged in user */
-  const [token, setToken] = useState();
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken}></Login>
