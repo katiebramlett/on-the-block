@@ -8,7 +8,7 @@ import img from '../assets/logo.png';
 function Navigation({ setToken }) {
 
   /* Remove session token of a logged in user */
-  
+
   const removeToken = async e => {
     e.preventDefault();
     setToken('');
@@ -51,7 +51,7 @@ function Navigation({ setToken }) {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/" onClick={removeToken}>
+                <NavLink className="nav-link" to="/login" onClick={removeToken}>
                   Logout
                 </NavLink>
               </li>

@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-import useToken from './utils/useToken';
-
+import useToken from "./utils/useToken";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
@@ -15,19 +14,17 @@ import {
   Settings,
 } from "./components";
 
-
 function App() {
   /* Check for logged in user */
   const { token, setToken } = useToken();
 
   if (!token) {
-    return <Login setToken={setToken}></Login>
-
+    return <Login setToken={setToken}></Login>;
   }
 
   return (
     <Router>
-      <Navigation setToken={setToken}/>
+      <Navigation setToken={setToken} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -38,7 +35,6 @@ function App() {
       <Footer />
     </Router>
   );
-
 }
 
 export default App;
