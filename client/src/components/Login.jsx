@@ -1,0 +1,48 @@
+import React, { useState } from "react";
+import PropTypes from 'prop-types';
+import { axiosBackend  } from "../utils/axios";
+
+import "../assets/login.css"
+
+function Login({ setToken }) {
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [error, setError]       = useState();
+
+    const loginUser = async e => {
+        e.preventDefault();
+
+        return axiosBackend
+            .post('login', {username, password})
+            .then(response => {
+                setToken(response.data.token)
+            })
+            .catch(e => {
+                console.log(e)
+                setError("Invalid username or pasword.")
+            });
+    }
+
+    return (
+        <div className="login-wrapper">
+            <form onSubmit={loginUser}>
+                <h1> Login </h1>
+                <label><p>username </p><input type="text" onChange={e => setUsername(e.target.value)} placeholder="username"></input></label>
+                <label><p>password </p><input type="password" onChange={e => setPassword(e.target.value)} placeholder="password"></input></label>
+                {
+                    error && <div style={{color: 'white'}}>{error}</div>
+                }
+                <div>
+                    <button type="submit">LOGIN</button>
+                </div>
+                {/* <span>Forgot <a href="">password</a></span> */}
+            </form>
+        </div>
+    );
+}
+/* Proptypes check for if the system data matched expected types during runtime */
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+}
+
+export default Login;

@@ -80,7 +80,6 @@ h2 {
     align-items: center;
     justify-content:space-around;
     flex-direction: row;
-    
 }
 
 .right {
@@ -92,3 +91,6 @@ h2 {
     flex:1;
 }
 
+.nav button {
+    
+}

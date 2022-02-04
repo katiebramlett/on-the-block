@@ -1,36 +1,39 @@
 /* Time to dark theme */
 
+/* this can be used for fonts or icons */
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap');
+
 :root {
     --blue: #00c3ffe0;
-    --darkgray: rgba(0, 0, 0, 0.884);
     --white: #ffffffec;
+    --darkgray: rgba(0, 0, 0, 0.884);
 }
 
-* {
-    margin: 0;
-    padding: 0;
+.login-wrapper {
+    align-items: center;
     box-sizing: border-box;
-    background-color: var(--darkgray);
-}
-
-form {
-    width: 350px;
-    padding: 40px;
+    font-family: 'Montserrat', sans-serif;
+    width: 400px;
+    padding: 10px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    box-shadow: #00c3ffe0;
+    background-color: #212529;
+    border: 2px solid var(--blue);
 }
 
-form h1 {
+.login-wrapper h1 {
     color: var(--white);
-    text-transform: uppercase;
     font-weight: 500;
+    padding: 40px;
+    text-transform: uppercase;
 }
 
-form input[type='text'], form input[type='password']
+.login-wrapper input[type='text'], form input[type='password']
 {
     border: none;
     background: none;
@@ -39,13 +42,15 @@ form input[type='text'], form input[type='password']
     text-align: center;
     padding: 14px 10px;
     width: 200px;
-    outline: none;
+    height: 40px;
     color: var(--white);
     border-bottom: 1px solid var(--blue);
+    border: 1px solid #00c3ffe0;
+    border-radius: 24px;
 }
 
-form input[type='submit']
-{
+.login-wrapper button {
+    background-color: var(--blue);
     border: none;
     background: none;
     display: block;
@@ -57,20 +62,10 @@ form input[type='submit']
     color: var(--white);
     border-radius: 24px;
     cursor: pointer;
+    width: 185px;
 }
 
-form input[type='submit']:hover {
+.login-wrapper button:hover {
     background-color: var(--blue);
 }
 
-form span {
-    color: grey;
-    font-size: 12px;
-}
-
-form a {
-    font-size: 12px;
-    color: var(--blue);
-    text-transform: none;
-    text-decoration: none;
-}
