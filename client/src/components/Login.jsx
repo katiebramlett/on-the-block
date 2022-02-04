@@ -1,57 +1,37 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import { axiosBackend  } from "../utils/axios";
 
 import "../assets/login.css"
 
 function Login({ setToken }) {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
-    const [errorMessage, setErrorMessage] = useState('');
+    const [error, setError]       = useState();
 
-    const handleSubmit = async e => {
+    const loginUser = async e => {
+
         e.preventDefault();
 
-        setErrorMessage('')
-
-
-        const token = await loginUser({
-            username,
-            password
-        });
-
-        setToken(token)
-        
+        return axiosBackend
+            .post('login', {username, password})
+            .then(response => {
+                setToken(response.data.token)
+            })
+            .catch(e => {
+                console.log(e)
+                setError("Invalid username or pasword.")
+            });
     }
-
-    
-    async function loginUser(credentials) {
-
-        const url = 'http://localhost:8081/login'
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(credentials)
-        }
-
-        return fetch(url, options)
-            .then(data => data.json())
-            .catch (
-                setErrorMessage('Invalid username or password.')
-        )
-    }
-
 
     return (
         <div className="login-wrapper">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={loginUser}>
                 <h1> Login </h1>
                 <label><p>username </p><input type="text" onChange={e => setUsername(e.target.value)} placeholder="username"></input></label>
                 <label><p>password </p><input type="password" onChange={e => setPassword(e.target.value)} placeholder="password"></input></label>
                 {
-                    errorMessage && <div style={{color: 'white'}}>{errorMessage}</div>
+                    error && <div style={{color: 'white'}}>{error}</div>
                 }
                 <div>
                     <button type="submit">LOGIN</button>

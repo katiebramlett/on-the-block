@@ -11,10 +11,12 @@ export default function useToken() {
 
   const saveToken = userToken => {
 
-    console.log('usetoken' + JSON.stringify(userToken))
+    console.log("Token being set => " + userToken);
 
-    sessionStorage.setItem('token', JSON.stringify(userToken));
-    setToken(userToken.token);
+    console.log('usetoken' + userToken);
+
+    sessionStorage.setItem('token', userToken);
+    setToken(userToken);
   };
 
   return {
