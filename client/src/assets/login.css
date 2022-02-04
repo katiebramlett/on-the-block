@@ -9,6 +9,7 @@
     --blue: #00c3ffe0;
     --white: #ffffffec;
     --darkgray: rgba(0, 0, 0, 0.884);
+    --grayish: #6c757d
 }
 
 .login-wrapper {
@@ -69,3 +70,10 @@
     background-color: var(--blue);
 }
 
+.login-wrapper a {
+    font-size: 16px;
+}
+
+.login-wrapper a:hover {
+    color: var(--grayish);
+}

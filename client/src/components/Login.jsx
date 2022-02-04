@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { axiosBackend  } from "../utils/axios";
 
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 import "../assets/login.css"
 
 function Login({ setToken }) {
@@ -35,7 +39,9 @@ function Login({ setToken }) {
                 <div>
                     <button type="submit">LOGIN</button>
                 </div>
-                {/* <span>Forgot <a href="">password</a></span> */}
+                <div>
+                    <p>New to On The Block? <br></br> <a href="">Create an account <FontAwesomeIcon icon={faPlus}/></a></p>
+                </div>
             </form>
         </div>
     );

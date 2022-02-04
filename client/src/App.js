@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import useToken from "./utils/useToken";
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
