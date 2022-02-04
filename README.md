@@ -10,10 +10,10 @@ Senior Capstone Project repository for On The Block, an ethereum-based decentral
 
 ### Documentation
 [40% Demo](/docs/Group%205%2040%25%20Demo.pdf)<br>
-70% Demo - TO DO<br>
+[70% Demo](/docs/Group%205%2070%25%20Demo.pdf)<br>
 [Presentation 2](/docs/Group%205%20Presentation%202.pdf)<br>
-[Architecture Design Document 1](/docs/Team%205%20ArchitectureDesign%20Assignment.pdf)<br>
-Architecture Design Document 2 - TO DO<br>
+[Architecture Design Document 1](/docs/Team%205%20Architecture%20Design%20Assignment%201.pdf)<br>
+[Architecture Design Document 2](/docs/Team%205%20Architecture%20Design%20Assignment%202.pdf)<br>
 [Project Diagram](/docs/Team5-ProjectDiagrams.md)<br>
 [Solidity Development Setup](/docs/Solidity-Dev.md)<br>
 
