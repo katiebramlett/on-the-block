@@ -10,7 +10,6 @@ function Login({ setToken }) {
     const [error, setError]       = useState();
 
     const loginUser = async e => {
-
         e.preventDefault();
 
         return axiosBackend

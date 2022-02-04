@@ -18,6 +18,9 @@ function App() {
   /* Check for logged in user */
   const { token, setToken } = useToken();
 
+
+  console.log("CURRENT TOKEN = " + token)
+
   if (!token) {
     return <Login setToken={setToken}></Login>;
   }
