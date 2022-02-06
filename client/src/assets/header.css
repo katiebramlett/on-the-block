@@ -8,11 +8,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap');
 
-:root {
-    --blue: #00c3ffe0;
-    --darkgray: rgba(0, 0, 0, 0.884);
-    --white: #ffffffec;
-}
+@import './colorscheme.css';
 
 * {
     margin: 0;
@@ -22,7 +18,7 @@
 }
 
 h2 {
-    color: var(--blue);
+    color: var(--main);
     font-family: 'Lato', sans-serif;
 }
 
@@ -46,7 +42,7 @@ h2 {
 .nav i {
     padding: 00px 7px;
     cursor: pointer;
-    color: --blue;
+    color: --main;
 }
 
 .nav ul {
@@ -65,7 +61,7 @@ h2 {
 }
 
 .nav a:hover {
-    color: var(--blue);
+    color: var(--main);
     transition: all 0.3s ease 0s;
 }
 
@@ -83,7 +79,7 @@ h2 {
 }
 
 .right {
-    color: var(--blue);
+    color: var(--main);
     flex:1;
 }
 

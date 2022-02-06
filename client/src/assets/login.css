@@ -5,12 +5,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap');
 
-:root {
-    --blue: #00c3ffe0;
-    --white: #ffffffec;
-    --darkgray: rgba(0, 0, 0, 0.884);
-    --grayish: #6c757d
-}
+@import './colorscheme.css';
 
 .login-wrapper {
     align-items: center;
@@ -24,7 +19,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     background-color: #212529;
-    border: 2px solid var(--blue);
+    border: 2px solid var(--main);
 }
 
 .login-wrapper h1 {
@@ -45,19 +40,19 @@
     width: 200px;
     height: 40px;
     color: var(--white);
-    border-bottom: 1px solid var(--blue);
-    border: 1px solid #00c3ffe0;
+    border-bottom: 1px solid var(--main);
+    border: 1px solid var(--main);
     border-radius: 24px;
 }
 
 .login-wrapper button {
-    background-color: var(--blue);
+    background-color: var(--main);
     border: none;
     background: none;
     display: block;
     margin: 45px auto 20px auto;
     text-align: center;
-    border: 2px solid var(--blue);
+    border: 2px solid var(--main);
     padding: 14px 40px;
     outline: none;
     color: var(--white);
@@ -67,11 +62,12 @@
 }
 
 .login-wrapper button:hover {
-    background-color: var(--blue);
+    background-color: var(--main);
 }
 
 .login-wrapper a {
     font-size: 16px;
+    color: var(--main);
 }
 
 .login-wrapper a:hover {

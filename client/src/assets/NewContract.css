@@ -1,13 +1,9 @@
 /* Time to dark theme */
 
-:root {
-    --blue: #00c3ffe0;
-    --darkgray: rgba(0, 0, 0, 0.884);
-    --white: #ffffffec;
-}
+@import './colorscheme.css';
 
 h1 {
-    color: var(--blue);
+    color: var(--main);
     font-weight: 500;
 }
 
@@ -15,11 +11,12 @@ form input[type='text']
 {
     width: 300px;
     height: 40px;
-    border: 1px solid #00c3ffe0;
+    border: 1px solid var(--main);
     background: none;
     border-radius: 12px;
-    border-bottom: 1px solid var(--blue);
+    border-bottom: 1px solid var(--main);
     color: var(--white);
+    text-align: center;
 }
 
 form input[type='submit']
@@ -29,7 +26,7 @@ form input[type='submit']
     display: block;
     margin: 45px auto 20px auto;
     text-align: center;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--main);
     padding: 14px 40px;
     outline: none;
     color: var(--white);
@@ -38,12 +35,12 @@ form input[type='submit']
 }
 
 form input[type='submit']:hover {
-    background-color: var(--blue);
+    background-color: var(--main);
 }
 
 form a {
     font-size: 12px;
-    color: var(--blue);
+    color: var(--main);
     text-transform: none;
     text-decoration: none;
 }

@@ -23,7 +23,7 @@ function Login({ setToken }) {
             })
             .catch(e => {
                 console.log(e)
-                setError("Invalid username or pasword.")
+                setError("Invalid username or password.")
             });
     }
 

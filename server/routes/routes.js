@@ -17,6 +17,16 @@ router.get('/users/:userid/wallets', getUserWallet)
 router.post('/users/create', postUser);
 router.post('/users/:userid/wallets/:walletaddr', postWallet)
 
-// contract actions
+// contract --> get all contracts that belong to a user 
+// router.post('/users/')
+
+router.get('/users/:userid/contracts')
+
+router.get('/users/:userid/contracts/:contractid')
+
+// router.get('/users/:user/contracts')
+// router.get('/users/:user/contracts')
+
+
 
 module.exports = router;
