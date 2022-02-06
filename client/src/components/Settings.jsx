@@ -3,10 +3,10 @@ import React from "react";
 function Settings() {
   return (
     <div className="settings">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Settings</h1>
+      <div className="container">
+        <div className="row align-items-center my-5">
+          <div className="col-lg-5">
+            <h1 className="font-weight-light">Settings</h1>
             <br></br>
             <label for="fname"><b>First Name:</b><p>Katie</p></label><br></br>
             <label for="lname"><b>Last Name:</b><p>Bramlett</p></label><br></br>

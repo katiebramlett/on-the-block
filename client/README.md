@@ -1,9 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+APP LOGIN TUTORIAL --> https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications#introduction
 
+https://www.bezkoder.com/react-hooks-redux-login-registration-example/
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `yarn start`
 
 Runs the app in the development mode.<br />
@@ -66,3 +68,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+https://medium.com/coinmonks/how-to-do-authentication-in-decentralized-application-dapp-d9bc66b6249c
