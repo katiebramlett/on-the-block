@@ -40,7 +40,7 @@ function Login({ setToken }) {
                     <button type="submit">LOGIN</button>
                 </div>
                 <div>
-                    <p>New to On The Block? <br></br> <a href="">Create an account <FontAwesomeIcon icon={faPlus}/></a></p>
+                    <p>New to On The Block? <br></br> <a href="/createAccount">Create an account <FontAwesomeIcon icon={faPlus}/></a></p>
                 </div>
             </form>
         </div>

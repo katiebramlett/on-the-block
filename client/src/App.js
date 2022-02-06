@@ -13,6 +13,7 @@ import {
   NewContract,
   Contracts,
   Settings,
+  CreateAccount
 } from "./components";
 
 function App() {
@@ -23,7 +24,15 @@ function App() {
   console.log("CURRENT TOKEN = " + token)
 
   if (!token) {
-    return <Login setToken={setToken}></Login>;
+    return (
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login setToken={setToken}/>} />
+          <Route path="/login" element={<Login setToken={setToken}/>} />
+          <Route path="/creataAccount" element={<CreateAccount/>} />
+        </Routes>
+      </Router>
+    );
   }
 
   return (
