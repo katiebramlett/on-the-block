@@ -29,7 +29,7 @@
     text-transform: uppercase;
 }
 
-.login-wrapper input[type='text'], form input[type='password']
+.login-wrapper input[type='text'], .login-wrapper form input[type='password']
 {
     border: none;
     background: none;
@@ -37,7 +37,7 @@
     margin: 20px auto;
     text-align: center;
     padding: 14px 10px;
-    width: 200px;
+    width: fit-content;
     height: 40px;
     color: var(--white);
     border-bottom: 1px solid var(--main);

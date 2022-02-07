@@ -1,5 +1,69 @@
 @import './colorscheme.css';
 
 .create-account-wrapper {
+    background-color: #212529;
+    border: 2px solid var(--main);
+    align-items: center;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    width: 420px;
+    text-align: center;
+
+}
+
+.create-account-wrapper h1 {
+    color: var(--white);
+    font-weight: 500;
+    padding: 40px;
+    text-transform: uppercase;
+}
+
+.create-account-wrapper button {
+    background-color: var(--main);
+    border: none;
+    background: none;
     display: block;
+    margin: 45px auto 20px auto;
+    text-align: center;
+    border: 2px solid var(--main);
+    padding: 14px 40px;
+    outline: none;
+    color: var(--white);
+    border-radius: 24px;
+    cursor: pointer;
+    width: 185px;
+}
+
+.create-account-wrapper button:hover {
+    background-color: var(--main);
+}
+
+.create-account-wrapper input[type='text'], .create-account-wrapper input[type='password']
+{
+    border: none;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 10px;
+    width: fit-content;
+    height: 40px;
+    color: var(--white);
+    border-bottom: 1px solid var(--main);
+    border: 1px solid var(--main);
+    border-radius: 24px;
+}
+
+.create-account-wrapper a {
+    font-size: 16px;
+    color: var(--main);
+}
+
+.create-account-wrapper a:hover {
+    color: var(--grayish);
 }
