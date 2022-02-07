@@ -13,6 +13,7 @@ function Navigation({ setToken }) {
     e.preventDefault();
     setToken('');
     sessionStorage.clear();
+    window.location.href = '/'
   }
 
   return (

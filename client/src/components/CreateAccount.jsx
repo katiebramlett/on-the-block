@@ -1,10 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
+import { axiosBackend  } from "../utils/axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 function CreateAccount() {
 
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+    const [confirmPassword, setconfirmPassword] = useState();
+    const [error, setError] = useState();
+
+    const createAccount = async e => {
+
+
+    }
+
     return (
-        <div>
-            <h1>Create an Account!!</h1>
+        <div className="create-account-wrapper">
+            <form onSubmit={createAccount}>
+                <h1>Create an Account</h1>
+                <label><p>username </p><input type="text" onChange={e => setUsername(e.target.value)} placeholder="username"></input></label>
+                <label><p>password </p><input type="password" onChange={e => setPassword(e.target.value)} placeholder="password"></input></label>
+                <label><p>confirm password </p><input type="password" onChange={e => setPassword(e.target.value)} placeholder="confirm password"></input></label>
+                <div>
+                    <button type="submit">SIGN UP</button>
+                </div>
+                <div>
+                    <p>Already a user? <br></br> <a href="/login"> Login</a></p>
+                </div>
+            </form>
         </div>
     )
 
