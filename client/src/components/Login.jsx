@@ -20,7 +20,7 @@ function Login({ setToken }) {
             .post('login', {username, password})
             .then(response => {
                 setToken(response.data.token)
-                window.location.href = '/'
+                // window.location.href = '/' ???
 
             })
             .catch(e => {
@@ -33,8 +33,22 @@ function Login({ setToken }) {
         <div className="login-wrapper">
             <form onSubmit={loginUser}>
                 <h1> Login </h1>
-                <label><p>username </p><input type="text" onChange={e => setUsername(e.target.value)} placeholder="username"></input></label>
-                <label><p>password </p><input type="password" onChange={e => setPassword(e.target.value)} placeholder="password"></input></label>
+                <label>
+                    {/* <p>username </p> */}
+                    <input 
+                        type="text" 
+                        onChange={e => setUsername(e.target.value)} 
+                        placeholder="username">
+                    </input>
+                </label>
+                <label>
+                    {/* <p>password </p> */}
+                    <input 
+                        type="password" 
+                        onChange={e => setPassword(e.target.value)} 
+                        placeholder="password">
+                    </input>
+                </label>
                 {
                     error && <div style={{color: 'white'}}>{error}</div>
                 }

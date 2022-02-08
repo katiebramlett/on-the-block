@@ -25,7 +25,7 @@
 .login-wrapper h1 {
     color: var(--white);
     font-weight: 500;
-    padding: 40px;
+    padding: 30px;
     text-transform: uppercase;
 }
 
@@ -50,7 +50,7 @@
     border: none;
     background: none;
     display: block;
-    margin: 45px auto 20px auto;
+    margin: 20px auto 20px auto;
     text-align: center;
     border: 2px solid var(--main);
     padding: 14px 40px;
