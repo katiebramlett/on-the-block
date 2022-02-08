@@ -12,35 +12,42 @@ function CreateAccount({ setToken }) {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [confirmPassword, setconfirmPassword] = useState();
-    const [error, setError] = useState();
+
+    /* errors lol */
+    const [errorFN, setErrorFN] = useState();
+    const [errorLN, setErrorLN] = useState();
+    const [errorUN, setErrorUN] = useState();
+    const [errorPW, setErrorPW] = useState();
+    const [errorCPW, setErrorCPW] = useState();
 
     const createAccount = async e => {
 
         e.preventDefault()
 
-        if (!username) setError("Username is a required field."); 
-        else if (!password) setError("Password is required field.");
-        else if (!confirmPassword) setError("Please confirm your password.")
-        else if (password != confirmPassword) setError("Passwords must match.") 
+        if (!firstname) setErrorFN("First name is a required field."); 
+        if (!lastname) setErrorLN("Last name is a required field."); 
+        if (!username) setErrorUN("Username is a required field."); 
+        if (!password) setErrorPW("Password is a required field.");
+        if (!confirmPassword) setErrorCPW("Please confirm your password.")
+        else if (password != confirmPassword) setErrorCPW("Passwords must match.") 
 
         // all input is correct, attempt to create a new user 
-        else {
-            // const token =  await axiosBackend
-            //     .post('users/create', {username, password})
-            //     .then(response => {
-            //         setToken(response.data.token)
-            //         window.location.href = '/'
-
-            //     })
-            //     .catch(e => {
-            //         console.log(e)
-            //         setError("Invalid username or password.")
-            //     });
-
-
-            // setToken(token);
-            setToken("test1234")
-            // window.location.href = '/ ????   
+        else if (firstname && lastname && username && password && password === confirmPassword) { 
+            const token =  await axiosBackend
+                .post('users/create', {
+                    firstname,
+                    lastname,
+                    username, 
+                    password
+                })
+                .then(response => {
+                    setToken(response.data.token)
+                    window.location.href = '/'
+                })
+                .catch(e => {
+                    console.log(e)
+                    setErrorUN("Username is unavailable.")
+                 });
         }
     }
 
@@ -50,6 +57,7 @@ function CreateAccount({ setToken }) {
                 <h1>Create an Account</h1>
                 <label>
                     {/* <p>firstname</p> */}
+                    {errorFN && <div style={{color: 'white'}}>{errorFN}</div>}
                     <input 
                         type="text" 
                         onChange={e => setFirstname(e.target.value)} 
@@ -58,6 +66,7 @@ function CreateAccount({ setToken }) {
                 </label>
                 <br></br>
                 <label>
+                    {errorLN && <div style={{color: 'white'}}>{errorLN}</div>}
                     {/* <p>lastname</p> */}
                     <input 
                         type="text" 
@@ -67,6 +76,7 @@ function CreateAccount({ setToken }) {
                 </label>
                 <br></br>
                 <label>
+                    {errorUN && <div style={{color: 'white'}}>{errorUN}</div>}
                     {/* <p>username</p> */}
                     <input 
                         type="text" 
@@ -76,6 +86,7 @@ function CreateAccount({ setToken }) {
                 </label>
                 <br></br>
                 <label>
+                    {errorPW && <div style={{color: 'white'}}>{errorPW}</div>}
                     {/* <p>password</p> */}
                     <input 
                         type="password" 
@@ -85,6 +96,7 @@ function CreateAccount({ setToken }) {
                 </label>
                 <br></br>
                 <label>
+                    {errorCPW && <div style={{color: 'white'}}>{errorCPW}</div>}
                     {/* <p>confirm password</p> */}
                     <input 
                         type="password" 
@@ -93,9 +105,6 @@ function CreateAccount({ setToken }) {
                     </input>
                 </label>
                 <br></br>
-                {
-                    error && <div style={{color: 'white'}}>{error}</div>
-                }
                 <div>
                     <button type="submit">SIGN UP</button>
                 </div>

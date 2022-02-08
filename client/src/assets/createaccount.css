@@ -18,7 +18,7 @@
 .create-account-wrapper h1 {
     color: var(--white);
     font-weight: 500;
-    padding: 20px;
+    padding: 30px;
     text-transform: uppercase;
 }
 
@@ -47,7 +47,7 @@
     border: none;
     background: none;
     display: block;
-    margin: 10px auto;
+    margin: 12px auto;
     text-align: center;
     padding: 10px 10px;
     width: fit-content;

@@ -67,8 +67,9 @@ const postUser = async (req, res, next) => {
 
     try {
         // maybe lets return the id of the user created  
-        const user = await createUser(body.firstname, body.lastname, body.username, body.password, body.role);
-        res.sendStatus(201);   
+        const token = await createUser(body.firstname, body.lastname, body.username, body.password);
+
+        res.status(200).json({token: token});   
     } catch(e) {
         console.log(e.message);
         res.sendStatus(500) & next(error);

@@ -28,9 +28,10 @@ const getWallet = async(userID) => {
     }
 };
 
-const createUser = async(firstname, lastname, username, password, role) => {
+const createUser = async(firstname, lastname, username, password) => {
     try {
-        return await createUserDB(firstname, lastname, username, password, role);
+        const result = await createUserDB(firstname, lastname, username, password);
+        return result[0].userID
     } catch(e) {
         throw new Error(e.message);
     }
