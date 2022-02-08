@@ -20,7 +20,8 @@ function Login({ setToken }) {
             .post('login', {username, password})
             .then(response => {
                 setToken(response.data.token)
-                // window.location.href = '/' ???
+                window.location.href = '/' 
+                console.log("logging in...")
 
             })
             .catch(e => {

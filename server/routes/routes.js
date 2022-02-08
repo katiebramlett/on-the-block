@@ -2,6 +2,9 @@ const express = require('express');
 
 const { login, getUserWallet, postUser, postWallet } = require('../controllers/user.controller');
 
+const { getContract } = require('../controllers/contract.controller');
+
+
 const router = express.Router();
 
 // API Routes which map to controllers
@@ -23,6 +26,8 @@ router.post('/users/:userid/wallets/:walletaddr', postWallet)
 router.get('/users/:userid/contracts')
 
 router.get('/users/:userid/contracts/:contractid')
+
+router.get('/contracts', getContract)
 
 // router.get('/users/:user/contracts')
 // router.get('/users/:user/contracts')

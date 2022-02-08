@@ -1,6 +1,25 @@
 import React from "react";
 
+import {axiosBackend} from '../utils/axios'
+
 function Contracts() {
+
+  const getContracts = async e => {    
+    const contracts = axiosBackend
+      .get('contracts')
+      .then(response => {
+          // setToken(response.data.token)
+          // window.location.href = '/' ???
+
+          console.log(response.data)
+
+
+      })
+      .catch(e => {
+          console.log(e)
+      });
+  }
+
   return (
     <div className="contracts">
       <div className="container">
@@ -9,6 +28,8 @@ function Contracts() {
             <h1 className="font-weight-light">My Contracts</h1>
             <br></br>
             <h5>Current Contracts</h5>
+
+            <button onClick={getContracts}>GET CONTRACTS</button>
             
             <br></br>
             <h5>Previous Contracts</h5>
