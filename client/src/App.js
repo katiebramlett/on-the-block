@@ -13,7 +13,8 @@ import {
   NewContract,
   Contracts,
   Settings,
-  CreateAccount
+  CreateAccount,
+  Notifications
 } from "./components";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/newContract" element={<NewContract />} />
         <Route path="/contracts" element={<Contracts />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/notifications" element={<Notifications />} />
       </Routes>
       <Footer />
     </Router>

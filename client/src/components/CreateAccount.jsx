@@ -109,7 +109,7 @@ function CreateAccount({ setToken }) {
                     <button type="submit">SIGN UP</button>
                 </div>
                 <div>
-                    <p>Already a user? <br></br> <a href="/login"> Login <FontAwesomeIcon icon={faSignInAlt}/></a></p>
+                    <p>Already a user? <br></br> <a href="/login"> Login <span style={{fontSize: '13px', verticalAlign: 'middle'}}><FontAwesomeIcon icon={faSignInAlt}/></span></a></p>
                 </div>
             </form>
         </div>

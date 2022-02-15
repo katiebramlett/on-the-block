@@ -74,7 +74,7 @@
   "sourceMap": "106:1527:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;106:1527:1;;;;;;;",
   "deployedSourceMap": "106:1527:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;981:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;981:93:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;485:457;;8:9:-1;5:2;;;30:1;27;20:12;5:2;485:457:1;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;485:457:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;1159:213;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1159:213:1;;;;;;;;;;;;;;;;;;;:::i;:::-;;981:93;1023:4;1046:21;1039:28;;981:93;:::o;485:457::-;625:15;665:12;;:14;;;;;;;;;;;;652:27;;689:28;720:9;:21;730:10;720:21;;;;;;;;;;;689:52;;778:12;751:11;:24;;;:39;;;;;;;;;;;;;;;;;;825:10;800:11;:22;;;:35;;;;;;;;;;;;;;;;;;873:13;845:11;:25;;:41;;;;923:12;896:11;:24;;:39;;;;485:457;;;;;;;:::o;1159:213::-;1222:3;:12;;:23;1235:9;1222:23;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1222:23:1;1159:213;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21;\n\n// Smart contract for rental contract payments\ncontract RentalContract {\n\n    // Rental Contract Struct with all necessary variables\n    struct Contract {\n        address payable landlordAddr;\n        address payable tenantAddr;\n        uint monthlyAmount;\n        uint numberMonths;\n    }\n\n    mapping (uint => Contract) contracts;\n    uint numContracts;\n\n    // Create new contract between 2 users (landlord and tenant)\n    function createNewContract(address payable landlordAddr, address payable tenantAddr, uint monthlyAmount, uint numberMonths) public returns (uint contractID) {\n        contractID = numContracts++;\n        Contract storage newContract = contracts[contractID];\n        newContract.landlordAddr = landlordAddr;\n        newContract.tenantAddr = tenantAddr;\n        newContract.monthlyAmount = monthlyAmount;\n        newContract.numberMonths = numberMonths;\n    }\n\n    // Checks balance of account\n    function getBalance() public view returns(uint) {\n        return address(this).balance;\n    }\n\n    // Send money from one account to another account (transaction of money)  \n    function payRent(address payable _To) public payable {\n        _To.transfer(msg.value);\n        // _To.call{value: msg.value, gas: 2300}(abi.encodeWithSignature(signatureString, arg);) returns (bool, bytes);\n    }\n\n    // Upon start of new contract, initiate the start of monthly recurring payments\n    // Set up monthly recurring payments\n    // function setupMonthlyPayments() {\n\n    // }\n\n    // Terminate smart contract\n    // function terminateContract() {\n\n    // }\n\n}",
-  "sourcePath": "/Users/katiebramlett/Documents/CSCI4243W-4244/Code/react-template/contracts/RentalContract.sol",
+  "sourcePath": "/Users/katiebramlett/Documents/CSCI4243W-4244/Code/on-the-block/contracts/RentalContract.sol",
   "ast": {
     "absolutePath": "project:/contracts/RentalContract.sol",
     "exportedSymbols": {
@@ -2308,12 +2308,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x1CC9bA7e2856b667C5eC4ed8E7c97C7B20e95ef4",
-      "transactionHash": "0xd70eb389a60c20f6fc3b4a62f80ad1cf42496f3baa88c3598ad50fc057ae7144"
+      "address": "0xA74e10d09E4F155Ca1ED25949AA7e722f987a84f",
+      "transactionHash": "0xf6b344180a5938e1731b12e478904ca09b27dcbf824d4547db3e7851b73f8b59"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-26T21:31:23.435Z",
+  "updatedAt": "2022-02-15T18:30:12.322Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

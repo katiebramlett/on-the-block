@@ -59,7 +59,7 @@
   "sourceMap": "59:311:0:-;;;211:50;8:9:-1;5:2;;;30:1;27;20:12;5:2;211:50:0;246:10;238:5;;:18;;;;;;;;;;;;;;;;;;59:311;;;;;;",
   "deployedSourceMap": "59:311:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;59:311:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;107:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;83:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;265:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;265:103:0;;;;;;;;;;;;;;;;;:::i;:::-;;107:36;;;;:::o;83:20::-;;;;;;;;;;;;;:::o;265:103::-;194:5;;;;;;;;;;;180:19;;:10;:19;;;176:26;;;354:9;327:24;:36;;;;176:26;265:103;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21;\n\ncontract Migrations {\n  address public owner;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "/Users/katiebramlett/Documents/CSCI4243W-4244/Code/react-template/contracts/Migrations.sol",
+  "sourcePath": "/Users/katiebramlett/Documents/CSCI4243W-4244/Code/on-the-block/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -952,12 +952,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x1A89A9c35eEde3Ef811d72DF979cf3eEc8081a65",
-      "transactionHash": "0x74ffb95471d0307f9f66150b6c9a5147756f7088daff52c4816e88666e663311"
+      "address": "0x1b758cF634785648dc59173D4B52a8bA01dB1113",
+      "transactionHash": "0x6e9d790fabf7736edef7dc99742ce64e4d69521a20ecc400ae9f792b5281b1fe"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-26T21:31:23.439Z",
+  "updatedAt": "2022-02-15T18:30:12.325Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

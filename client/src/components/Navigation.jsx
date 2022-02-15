@@ -1,8 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-
 import img from '../assets/logo.png';
 
 function Navigation({ setToken }) {
@@ -20,25 +26,21 @@ function Navigation({ setToken }) {
     <div className="navigation">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
-          <NavLink className="navbar-brand" to="/">
-            On The Block
-          </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  Home
-                  <span className="sr-only">(current)</span>
+                <NavLink className="navbar-brand" to="/">
+                  <FontAwesomeIcon icon={faHome}/>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
-                  About
+                  <FontAwesomeIcon icon={faInfoCircle}/>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/newContract">
-                  Start New Contract
+                  New Contract
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -46,14 +48,23 @@ function Navigation({ setToken }) {
                   My Contracts
                 </NavLink>
               </li>
+            </ul>
+          </div>
+          <div>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/notifications">
+                  <FontAwesomeIcon icon={faBell}/>
+                </NavLink>
+              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/settings">
-                  Settings
+                  <FontAwesomeIcon icon={faCog}/>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login" onClick={removeToken}>
-                  Logout
+                  <FontAwesomeIcon icon={faSignOutAlt}/>
                 </NavLink>
               </li>
             </ul>

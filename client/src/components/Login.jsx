@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { axiosBackend  } from "../utils/axios";
-
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 
 import "../assets/login.css"
 
@@ -57,7 +55,7 @@ function Login({ setToken }) {
                     <button type="submit">LOGIN</button>
                 </div>
                 <div>
-                    <p>New to On The Block? <br></br> <a href="/createAccount">Create an account <FontAwesomeIcon icon={faPlus}/></a></p>
+                    <p>New to On The Block? <br></br> <a href="/createAccount">Create an account <span style={{fontSize: '10px', verticalAlign: 'middle'}}><FontAwesomeIcon icon={faPlus}/></span></a></p>
                 </div>
             </form>
         </div>
