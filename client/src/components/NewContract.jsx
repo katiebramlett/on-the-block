@@ -91,8 +91,8 @@ class NewContract extends Component {
   render() {
     return (
         <div className="newcontract_container">
-          <div className="row align-items-center my-5">
-            <div className="col-lg-12">
+          <div className="row">
+            <div className="col" id="col1">
               <h1>Start New Contract</h1>
               <form onSubmit={this.handleSubmit}>
                 <input type="text" placeholder="Landlord Account Number" name="l_account_num" onChange={this.handleInputChange}></input><br></br>
@@ -102,8 +102,12 @@ class NewContract extends Component {
                 <input type="submit" value="Submit Contract"></input>
               </form>
             </div>
-            <div className="col-lg-12">
-              <h1> </h1>
+            <div className="col" id="col2">
+              <h1> Your rental contract </h1>
+              <div className="p">
+                This contract enters you into a rental agreement with your tenant. Please specify the Ethereum account address to collect this payment. 
+                Upon submission, your tenant will be notified of the contract. Please specific the amount in Ether per month. 
+              </div>
             </div>
           </div>
         </div>
