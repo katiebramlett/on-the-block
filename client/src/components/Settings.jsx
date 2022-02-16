@@ -18,7 +18,6 @@ function Settings() {
             <br></br>
             <h4>Connect Web3 Wallet</h4>
             <label for="wallet"><b>Wallet ID: </b>0xC83D74A1c0A28c49C231Fb02Dd5b0F99F3D80422</label><br></br>
-
           </div>
         </div>
       </div>
