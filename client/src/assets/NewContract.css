@@ -9,6 +9,7 @@
     transform: translateX(-50%);
     border: 1px solid var(--white);
     border-radius: 12px;
+    padding-left: 25px;
 }
 
 h1 {
