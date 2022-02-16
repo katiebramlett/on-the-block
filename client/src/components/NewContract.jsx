@@ -90,29 +90,23 @@ class NewContract extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="newContract">
-          <div className="container">
-            <div className="row align-items-center my-5">
-              <div className="col-lg-5">
-                <h1 className="font-weight-light">Start New Contract</h1>
-                <p>
-                  Start a New Rental Contract
-                </p>
+        <div className="newcontract_container">
+          <div className="row align-items-center my-5">
+            <div className="col-lg-12">
+              <h1>Start New Contract</h1>
+              <form onSubmit={this.handleSubmit}>
                 <input type="text" placeholder="Landlord Account Number" name="l_account_num" onChange={this.handleInputChange}></input><br></br>
-                <br></br>
                 <input type="text" placeholder="Tenant Account Number" name="t_account_num" onChange={this.handleInputChange}></input><br></br>
-                <br></br>
                 <input type="text" placeholder="Monthly Amount" name="monthly_amount" onChange={this.handleInputChange}></input><br></br>
-                <br></br>
                 <input type="text" placeholder="Number of Months" name="num_months" onChange={this.handleInputChange}></input><br></br>
-                <br></br>
                 <input type="submit" value="Submit Contract"></input>
-              </div>
+              </form>
+            </div>
+            <div className="col-lg-12">
+              <h1> </h1>
             </div>
           </div>
         </div>
-      </form>
     );
   }
 

@@ -2,14 +2,24 @@
 
 @import './colorscheme.css';
 
+.newcontract_container {
+    position: fixed;
+    margin-top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--white);
+    border-radius: 12px;
+}
+
 h1 {
-    color: var(--main);
+    color: var(--white);
     font-weight: 500;
 }
 
-form input[type='text']
+form input[type='text'], form input[type='submit']
 {
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
     height: 40px;
     border: 1px solid var(--main);
     background: none;
@@ -17,21 +27,18 @@ form input[type='text']
     border-bottom: 1px solid var(--main);
     color: var(--white);
     text-align: center;
+    margin: 15px;
 }
 
 form input[type='submit']
 {
-    border: none;
-    background: none;
-    display: block;
-    margin: 45px auto 20px auto;
-    text-align: center;
-    border: 1px solid var(--main);
-    padding: 14px 40px;
-    outline: none;
-    color: var(--white);
-    border-radius: 24px;
+
     cursor: pointer;
+    width: 100%;
+    max-width: 230px;
+    left: 25%;
+    transform: translateX(-25%);
+    position: relative;
 }
 
 form input[type='submit']:hover {
