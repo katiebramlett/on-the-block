@@ -3,8 +3,10 @@
     --main: #4782FF;
     --darkgray: rgba(0, 0, 0, 0.884);
     --white: #ffffffec;
-    --lightgray: #d3d3d3;
+    --lightgray: #afaeae;
     --gray: #343a40;
     --lazerlemon: #FCFF5c;
-    --alert: #F34213
+    --alert: #F34213;
+    --font: "PT Mono", monospace;
 }
+

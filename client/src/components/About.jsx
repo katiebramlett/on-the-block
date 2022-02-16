@@ -15,8 +15,8 @@ function About() {
   /* Set up popovers, which will be triggered with each button in Return() */
   /* HOW IT WORKS */
   const howitworksPopover = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">How It Works</Popover.Header>
+    <Popover className="popover" id="popover-basic">
+      <Popover.Header as="h3"><b>How It Works</b></Popover.Header>
       <Popover.Body>
         On the Block, our Ethereum decentralized application, allows users to easily interact with a smart contract to set up timely, recurring monthly payments. By utilizing blockchain technology, specifically an Ethereum-based application, we are alleviating the tedious and complicated process of paying rent to a landlord.
       </Popover.Body>
@@ -24,8 +24,8 @@ function About() {
   );
   /* BENEFITS */
   const benefitsPopover = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Benefits</Popover.Header>
+    <Popover className="popover" id="popover-basic">
+      <Popover.Header as="h3"><b>Benefits</b></Popover.Header>
       <Popover.Body>
         1. Autonomy<br></br>
         2. Cost-Effectiveness<br></br>
@@ -41,8 +41,8 @@ function About() {
   );
   /* FEATURES */
   const featuresPopover = (
-    <Popover id="popover-basic">
-      <Popover.Header as="h3">Features</Popover.Header>
+    <Popover className="popover" id="popover-basic">
+      <Popover.Header as="h3"><b>Features</b></Popover.Header>
       <Popover.Body>
         1. Start New Rental Contracts<br></br>
         2. Check Existing Rental Contracts<br></br>
@@ -57,46 +57,45 @@ function About() {
     <div className="home">
       <div className="container">
         <br></br><br></br>
-        <h1 className="font-weight-light">About ON THE BLOCK</h1>
+        <h1><b>About ON THE BLOCK</b></h1>
         <div className="row align-items-top my-5">
           <div className="col-lg-4">
-            <Card className="about-cards" style={{ width: '18rem', height: '100' }}>
+            <Card className="about-cards" style={{ width: '18rem', height: '80' }}>
               <Card.Body>
-                <Card.Title><FontAwesomeIcon icon={faQuestionCircle}/> How It Works</Card.Title>
+                <Card.Title><FontAwesomeIcon icon={faQuestionCircle}/> <span style={{color: 'white', fontWeight: 'bold'}}>How It Works</span></Card.Title>
                 <Card.Text>
                   <b>ON THE BLOCK</b> allows users to easily set up rental payments at the touch of a button using blockchain technology.
                 </Card.Text>
-                <br></br><br></br>
-                <OverlayTrigger trigger="click" placement="bottom" overlay={howitworksPopover}>
+                <br></br>
+                <OverlayTrigger trigger="click" placement="top" overlay={howitworksPopover}>
                   <Button className="about-buttons">Learn How It Works</Button>
                 </OverlayTrigger>
               </Card.Body>
             </Card>
           </div>
           <div className="col-lg-4">
-            <Card className="about-cards" style={{ width: '18rem', height: '100'}}>
+            <Card className="about-cards" style={{ width: '18rem', height: '80'}}>
               <Card.Body>
-                <Card.Title><FontAwesomeIcon icon={faDollarSign}/> Benefits</Card.Title>
+                <Card.Title><FontAwesomeIcon icon={faDollarSign}/> <span style={{color: 'white', fontWeight: 'bold'}}>Benefits</span></Card.Title>
                 <Card.Text>
                   Blockchain technology offers numerous benefits for rental contracts.
                 </Card.Text>
                 <br></br><br></br><br></br>
-                <OverlayTrigger trigger="click" placement="bottom" overlay={benefitsPopover}>
+                <OverlayTrigger trigger="click" placement="top" overlay={benefitsPopover}>
                   <Button className="about-buttons">View Our Benefits</Button>
                 </OverlayTrigger>
               </Card.Body>
             </Card>
           </div>
           <div className="col-lg-4">
-            <Card className="about-cards" style={{ width: '18rem', height: '100' }}>
+            <Card className="about-cards" style={{ width: '18rem', height: '80' }}>
               <Card.Body>
-                <Card.Title><FontAwesomeIcon icon={faStar}/> Features</Card.Title>
+                <Card.Title><FontAwesomeIcon icon={faStar}/> <span style={{color: 'white', fontWeight: 'bold'}}>Features</span></Card.Title>
                 <Card.Text>
-                  <b>ON THE BLOCK</b> offers numerous features to easily create and terminate rental contracts.<br></br>
-                  Plus, you'll get helpful alerts when your contracts are ready!
+                  <b>ON THE BLOCK</b> offers numerous features to easily create and terminate rental contracts.
+                  Plus, you'll get helpful alerts about your contracts!
                 </Card.Text>
-                <br></br>
-                <OverlayTrigger trigger="click" placement="bottom" overlay={featuresPopover}>
+                <OverlayTrigger trigger="click" placement="top" overlay={featuresPopover}>
                   <Button className="about-buttons">See Our Features</Button>
                 </OverlayTrigger>
               </Card.Body>

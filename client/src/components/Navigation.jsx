@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
@@ -30,22 +30,17 @@ function Navigation({ setToken }) {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink className="navbar-brand" to="/">
-                  <li><FontAwesomeIcon icon={faHome}/> ON THE BLOCK</li>
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
-                  <FontAwesomeIcon icon={faInfoCircle}/>
+                  <li><FontAwesomeIcon icon={faHome}/> <b>ON THE BLOCK</b></li>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/newContract">
-                  New Contract
+                  <li>New Contract</li>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contracts">
-                  My Contracts
+                  <li>My Contracts</li>
                 </NavLink>
               </li>
             </ul>
@@ -53,18 +48,23 @@ function Navigation({ setToken }) {
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
+                <NavLink className="nav-link" to="/about">
+                  <li><FontAwesomeIcon icon={faInfoCircle}/></li>
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/notifications">
-                  <FontAwesomeIcon icon={faBell}/>
+                  <li><FontAwesomeIcon icon={faBell}/></li>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/settings">
-                  <FontAwesomeIcon icon={faCog}/>
+                  <li><FontAwesomeIcon icon={faUserCog}/></li>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login" onClick={removeToken}>
-                  <FontAwesomeIcon icon={faSignOutAlt}/>
+                  <li><FontAwesomeIcon icon={faSignOutAlt}/></li>
                 </NavLink>
               </li>
             </ul>

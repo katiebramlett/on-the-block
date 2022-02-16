@@ -25,13 +25,10 @@ function Contracts() {
       <div className="container">
         <div className="row align-items-center my-5">
           <div className="col-lg-5">
-            <h1 className="font-weight-light">My Contracts</h1>
+            <h1><b>My Contracts</b></h1>
             <br></br>
             <h5>Current Contracts</h5>
-
-            <button onClick={getContracts}>Get Contracts</button>
-            
-            <br></br>
+            <br></br><br></br>
             <h5>Previous Contracts</h5>
           </div>
         </div>

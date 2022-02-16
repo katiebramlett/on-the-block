@@ -95,7 +95,7 @@ class NewContract extends Component {
           <div className="container">
             <div className="row align-items-center my-5">
               <div className="col-lg-5">
-                <h1 className="font-weight-light">Start New Contract</h1>
+                <h1><b>Start New Contract</b></h1>
                 <p>
                   Start a New Rental Contract
                 </p>

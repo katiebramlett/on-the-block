@@ -1,35 +1,52 @@
-@import './colorscheme.css';
+@import './root.css';
 
 h1 {
     color: var(--main);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 h3 {
     color: var(--main);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 h4 {
     color: var(--white);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 h5 {
     color: var(--white);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 p {
     color: var(--white);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 label {
     color: var(--white);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 b {
+    color: var(--main);
+    font-family: var(--font);
+}
+
+.infoLink {
+    color: var(--white);
+    font-weight: bold;
+    font-family: var(--font);
+}
+
+.infoLink:hover {
     color: var(--main);
 }

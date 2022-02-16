@@ -1,10 +1,11 @@
 /* Time to dark theme */
 
-@import './colorscheme.css';
+@import './root.css';
 
 h1 {
     color: var(--main);
     font-weight: 500;
+    font-family: var(--font);
 }
 
 form input[type='text']
@@ -17,6 +18,7 @@ form input[type='text']
     border-bottom: 1px solid var(--main);
     color: var(--white);
     text-align: center;
+    font-family: var(--font);
 }
 
 form input[type='submit']
@@ -32,10 +34,12 @@ form input[type='submit']
     color: var(--white);
     border-radius: 24px;
     cursor: pointer;
+    font-family: var(--font);
 }
 
 form input[type='submit']:hover {
     background-color: var(--main);
+    font-family: var(--font);
 }
 
 form a {
@@ -43,4 +47,5 @@ form a {
     color: var(--main);
     text-transform: none;
     text-decoration: none;
+    font-family: var(--font);
 }

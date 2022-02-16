@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { axiosBackend  } from "../utils/axios";
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import "../assets/login.css"
 
@@ -31,7 +31,7 @@ function Login({ setToken }) {
     return (
         <div className="login-wrapper">
             <form onSubmit={loginUser}>
-                <h1> Login </h1>
+                <h1>Login</h1>
                 <label>
                     {/* <p>username </p> */}
                     <input 

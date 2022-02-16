@@ -1,5 +1,16 @@
-@import './colorscheme.css';
+@import './root.css';
 
 .navbar-brand li {
     color: var(--main);
+    font-family: var(--font);
+}
+
+.nav-link li {
+    color: var(--white);
+    font-family: var(--font);
+}
+
+.nav-link li:hover {
+    color: var(--lightgray);
+    font-family: var(--font);
 }

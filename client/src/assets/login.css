@@ -5,12 +5,12 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&display=swap');
 
-@import './colorscheme.css';
+@import './root.css';
 
 .login-wrapper {
     align-items: center;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font);
     width: 400px;
     padding: 10px;
     position: fixed;
@@ -27,6 +27,8 @@
     font-weight: 500;
     padding: 30px;
     text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--font);
 }
 
 .login-wrapper input[type='text'], .login-wrapper form input[type='password']
@@ -43,6 +45,7 @@
     border-bottom: 1px solid var(--main);
     border: 1px solid var(--main);
     border-radius: 24px;
+    font-family: var(--font);
 }
 
 .login-wrapper button {
@@ -59,17 +62,21 @@
     border-radius: 24px;
     cursor: pointer;
     width: 185px;
+    font-family: var(--font);
 }
 
 .login-wrapper button:hover {
     background-color: var(--main);
+    font-family: var(--font);
 }
 
 .login-wrapper a {
     font-size: 16px;
     color: var(--main);
+    font-family: var(--font);
 }
 
 .login-wrapper a:hover {
     color: var(--grayish);
+    font-family: var(--font);
 }
