@@ -1,6 +1,4 @@
 import React from "react";
-import "../assets/test.css"
-
 import img from '../assets/logo.png';
 
 function Notifications() {

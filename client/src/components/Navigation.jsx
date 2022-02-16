@@ -6,10 +6,10 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faFileInvoiceDollar } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import img from '../assets/logo.png';
+
+import "../assets/navbar.css"
 
 function Navigation({ setToken }) {
 
@@ -30,7 +30,7 @@ function Navigation({ setToken }) {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink className="navbar-brand" to="/">
-                  <FontAwesomeIcon icon={faHome}/>
+                  <li><FontAwesomeIcon icon={faHome}/> ON THE BLOCK</li>
                 </NavLink>
               </li>
               <li className="nav-item">

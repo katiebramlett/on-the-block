@@ -29,7 +29,7 @@ function Contracts() {
             <br></br>
             <h5>Current Contracts</h5>
 
-            <button onClick={getContracts}>GET CONTRACTS</button>
+            <button onClick={getContracts}>Get Contracts</button>
             
             <br></br>
             <h5>Previous Contracts</h5>

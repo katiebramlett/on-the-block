@@ -1,0 +1,5 @@
+@import './colorscheme.css';
+
+.navbar-brand li {
+    color: var(--main);
+}
