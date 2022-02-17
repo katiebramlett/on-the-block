@@ -1,5 +1,7 @@
 import React from "react";
 
+// import "../assets/settings.css"
+
 function Settings() {
   return (
     <div className="settings">
