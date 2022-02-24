@@ -1,9 +1,6 @@
 const express = require('express');
-
 const { login, getUserWallet, postUser, postWallet } = require('../controllers/user.controller');
-
-const { getContract } = require('../controllers/contract.controller');
-
+const { getContract, postContract } = require('../controllers/contract.controller');
 
 const router = express.Router();
 
@@ -13,25 +10,18 @@ const router = express.Router();
 router.post('/login', login)
 
 // user actions -- GET
-// router.get('users/{userid}')
 router.get('/users/:userid/wallets', getUserWallet)
+router.get('/users/:userid/contracts')
+router.get('/users/:userid/contracts/:contractid')
 
 // user actions -- POST
 router.post('/users/create', postUser);
 router.post('/users/:userid/wallets/:walletaddr', postWallet)
 
-// contract --> get all contracts that belong to a user 
-// router.post('/users/')
-
-router.get('/users/:userid/contracts')
-
-router.get('/users/:userid/contracts/:contractid')
-
+// contract actions -- GET
 router.get('/contracts', getContract)
 
-// router.get('/users/:user/contracts')
-// router.get('/users/:user/contracts')
-
-
+// contract actions -- POST 
+router.post('/contracts', postContract)
 
 module.exports = router;

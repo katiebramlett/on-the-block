@@ -43,7 +43,7 @@ h1 {
     margin-left: 5px;
 }
 
-form input[type='text'], form input[type='submit']
+form input[type='text'], form input[type='submit'], form input[type='date']
 {
     width: 100%;
     max-width: 280px;
@@ -55,6 +55,10 @@ form input[type='text'], form input[type='submit']
     color: var(--white);
     text-align: center;
     margin: 15px;
+}
+
+form input[type='date']{
+  color: var(--grayish)
 }
 
 form input[type='submit']

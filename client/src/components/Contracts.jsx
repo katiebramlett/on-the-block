@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { axiosBackend  } from "../utils/axios";
+import useToken from "../utils/useToken";
 
-import {axiosBackend} from '../utils/axios'
 
 function Contracts() {
 
-  const getContracts = async e => {    
-    const contracts = axiosBackend
-      .get('contracts')
-      .then(response => {
-          // setToken(response.data.token)
-          // window.location.href = '/' ???
+  const {token, setToken } = useToken();
 
-          console.log(response.data)
+  const [contracts, setContracts] = useState()
 
+  const userid = token;
 
-      })
-      .catch(e => {
-          console.log(e)
+  useEffect(() => {
+
+    const getContracts = async () => {
+
+      const response = await axiosBackend
+        .get('contracts', {userid})
+        .then(response => response.data)
+        .catch(e => {
+            console.log(e)
       });
-  }
+
+      setContracts(response)
+    }    
+
+    getContracts()
+    
+  }, []);
+
 
   return (
     <div className="contracts">
@@ -29,8 +39,11 @@ function Contracts() {
             <br></br>
             <h5>Current Contracts</h5>
 
-            <button onClick={getContracts}>GET CONTRACTS</button>
+            <p>Contracts:
+              {contracts}
+            </p>
             
+
             <br></br>
             <h5>Previous Contracts</h5>
           </div>

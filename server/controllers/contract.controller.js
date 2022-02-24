@@ -1,16 +1,8 @@
-// logic for validating request parameters, query, sending 
-// response with correct code
-
-const { getContractService } = require('../services/contract.service');
-
+const { getContractService, postContractService } = require('../services/contract.service');
 
 const getContract = async (req, res, next) => {
-
     try {
-        // const userid = req.session.token
-        const userid = 50;
-
-        const contracts = await getContractService(userid)
+        const contracts = await getContractService(req.body.userid)
 
         res.status(200).json(contracts)
 
@@ -21,6 +13,21 @@ const getContract = async (req, res, next) => {
     }
 }
 
+const postContract = async (req, res, next) => {
+    try {
+        const contract = await postContractService(req.body.token, req.body.landlord_addr, req.body.tenant_addr, 
+                                    req.body.monthlyfee, req.body.startdate, req.body.enddate)
+                                    
+        res.status(200).json({'contractid': contract})
+
+    } catch (e) {
+        console.log(e)
+
+        res.sendStatus(500)
+    }
+}
+
 module.exports = {
-    getContract
+    getContract,
+    postContract
 }
