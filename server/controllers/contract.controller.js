@@ -2,7 +2,7 @@ const { getContractService, postContractService } = require('../services/contrac
 
 const getContract = async (req, res, next) => {
     try {
-        const contracts = await getContractService(req.body.userid)
+        const contracts = await getContractService(req.params.userid)
 
         res.status(200).json(contracts)
 

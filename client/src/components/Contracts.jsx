@@ -9,20 +9,20 @@ function Contracts() {
 
   const [contracts, setContracts] = useState()
 
-  const userid = token;
-
   useEffect(() => {
 
     const getContracts = async () => {
 
       const response = await axiosBackend
-        .get('contracts', {userid})
+        .get('contracts/' + token, )
         .then(response => response.data)
         .catch(e => {
             console.log(e)
-      });
+        });
 
       setContracts(response)
+      console.log("CONTRACTS" + contracts)
+
     }    
 
     getContracts()
@@ -40,7 +40,7 @@ function Contracts() {
             <h5>Current Contracts</h5>
 
             <p>Contracts:
-              {contracts}
+              {JSON.stringify(contracts)}
             </p>
             
 
