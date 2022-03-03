@@ -4,7 +4,41 @@
 
 .newcontract_container {
     position: fixed;
-    margin-top: 30px;
+    margin-top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--main);
+    border-radius: 12px;
+    padding-left: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.newcontract_container .row {
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newcontract_container .col {
+    flex: 25%;
+    padding: 20px;
+    padding-top: 15px;
+    margin-left: 10px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.p {
+    font-weight: 20px;
+    color: var(--white);
+    padding-top: 30px;
+}
+
+.newcontract_container {
+    position: fixed;
+    margin-top: 100px;
     left: 50%;
     transform: translateX(-50%);
     border: 1px solid var(--main);
@@ -44,8 +78,7 @@ h1 {
     font-weight: bold;
 }
 
-form input[type='text'], form input[type='submit']
-{
+form input[type='text'], form input[type='submit'], form input[type='date'] {
     width: 100%;
     max-width: 280px;
     height: 40px;
@@ -56,6 +89,10 @@ form input[type='text'], form input[type='submit']
     color: var(--white);
     text-align: center;
     margin: 15px;
+}
+
+form input[type='date']{
+  color: var(--gray)
 }
 
 form input[type='submit']

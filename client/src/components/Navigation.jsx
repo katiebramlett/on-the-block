@@ -34,6 +34,11 @@ function Navigation({ setToken }) {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/about">
+                  <li>About</li>
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/newContract">
                   <li>New Contract</li>
                 </NavLink>
@@ -47,11 +52,6 @@ function Navigation({ setToken }) {
           </div>
           <div>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/about">
-                  <li><FontAwesomeIcon icon={faInfoCircle}/></li>
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/notifications">
                   <li><FontAwesomeIcon icon={faBell}/></li>

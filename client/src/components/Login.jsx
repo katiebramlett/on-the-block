@@ -19,8 +19,6 @@ function Login({ setToken }) {
             .then(response => {
                 setToken(response.data.token)
                 window.location.href = '/' 
-                console.log("logging in...")
-
             })
             .catch(e => {
                 console.log(e)
