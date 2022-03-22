@@ -134,8 +134,9 @@ function NewContract() {
   }
   */
 
+  /*
   return (
-      <div className="newcontract_container">
+      <div className="container">
         <div className="row">
           <div className="col" id="col1">
             <h1><span style={{color: 'var(--main)'}}>Start New Contract</span></h1>
@@ -151,12 +152,40 @@ function NewContract() {
           <div className="col" id="col2">
             <h1> Your Rental Contract </h1>
             <div className="p">
-              This contract enters you into a rental agreement between tenant and landlord. Please specify the Ethereum account addresses for the receiver and sender to set up this contract. 
-              Upon submission, the other party of your rental agreement will be notified of the contract and have the option to accept or deny. Subsequently, if accepted, the transaction will be sent and recorded.
+              This contract enters you into a rental agreement between tenant and landlord.<br></br>Please specify the Ethereum account addresses for the receiver and sender to set up this contract. 
+              <br></br>Upon submission, the other party of your rental agreement will be notified of the contract and have the option to accept or deny. Subsequently, if accepted, the transaction will be sent and recorded.
             </div>
           </div>
         </div>
       </div>
+  );
+  */
+
+  return (
+    <div className="container">
+      <div className="row align-items-top my-5">
+        <div className="col-lg-1"></div>
+        <div className="col-lg-5">
+          <h1><span style={{color: 'var(--main)'}}>Start New Contract</span></h1>
+          <form onSubmit={createContract}>
+            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
+            <input type="text" placeholder="Tenant Account Number" name="tenant_addr" onChange={e => setTenant_addr(e.target.value)}></input><br></br>
+            <input type="text" placeholder="Monthly Amount (in ETH)" name="monthlyfee" onChange={e => setMonthlyfee(e.target.value)} ></input><br></br>
+            <input type="date" min={today} name="startdate" onChange={e => setStartDate(e.target.value)} ></input><br></br>
+            <input type="date" name="enddate" min={today} onChange={e => setEndDate(e.target.value)} ></input><br></br>
+            <input type="submit" value="Submit Contract"></input>
+          </form>
+        </div>
+        <div className="col-lg-5">
+          <h1> Your Rental Contract </h1>
+          <div className="p">
+            This contract enters you into a rental agreement between tenant and landlord.<br></br>Please specify the Ethereum account addresses for the receiver and sender to set up this contract. 
+            <br></br>Upon submission, the other party of your rental agreement will be notified of the contract and have the option to accept or deny. Subsequently, if accepted, the transaction will be sent and recorded.
+          </div>
+        </div>
+        <div className="col-lg-1"></div>
+      </div>
+    </div>
   );
 }
 

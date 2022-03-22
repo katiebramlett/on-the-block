@@ -114,6 +114,7 @@ function CreateAccount({ setToken }) {
             </form>
         </div>
     )
+
 }
 
 CreateAccount.propTypes = {

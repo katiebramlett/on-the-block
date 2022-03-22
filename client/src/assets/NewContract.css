@@ -2,6 +2,7 @@
 
 @import './root.css';
 
+/*
 .newcontract_container {
     position: fixed;
     margin-top: 5px;
@@ -30,12 +31,15 @@
     width: 100%;
 }
 
+*/
+
 .p {
     font-weight: 20px;
     color: var(--white);
     padding-top: 30px;
 }
 
+/*
 .newcontract_container {
     position: fixed;
     margin-top: 100px;
@@ -63,6 +67,7 @@
     max-width: 350px;
     width: 100%;
 }
+*/
 
 .p {
     font-weight: 20px;
@@ -86,27 +91,29 @@ form input[type='text'], form input[type='submit'], form input[type='date'] {
     background: none;
     border-radius: 12px;
     border-bottom: 1px solid var(--main);
-    color: var(--white);
+    color: var(--gray);
     text-align: center;
     margin: 15px;
-}
-
-form input[type='date']{
-  color: var(--gray)
+    font-family: var(--font);
 }
 
 form input[type='submit']
 {
-
     cursor: pointer;
     width: 100%;
     max-width: 230px;
     height: 50px;
-    margin-left: 40px
+    margin-left: 40px;
+    font-family: var(--font);
+    color: var(--white);
+    display: block;
+    padding: 10px 32px;
+    border-radius: 24px;
 }
 
 form input[type='submit']:hover {
     background-color: var(--main);
+    font-family: var(--font);
 }
 
 form a {
@@ -115,7 +122,6 @@ form a {
     text-transform: none;
     text-decoration: none;
 }
-
 
 /* resizing stuff */
 @media screen and (max-width: 992px) {
@@ -131,6 +137,7 @@ form a {
     }
   }
 
+  /*
   #col1:after {
     content: "";
     background-color: var(--main);
@@ -147,3 +154,4 @@ form a {
     padding-left: 60px;
     padding-right: 5px;
   }
+  */
