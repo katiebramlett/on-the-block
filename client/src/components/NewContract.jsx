@@ -5,6 +5,12 @@ import "../assets/NewContract.css"
 import { axiosBackend  } from "../utils/axios";
 import useToken from "../utils/useToken";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 function NewContract() {
 
@@ -179,8 +185,15 @@ function NewContract() {
         <div className="col-lg-5">
           <h1> Your Rental Contract </h1>
           <div className="p">
-            This contract enters you into a rental agreement between tenant and landlord.<br></br>Please specify the Ethereum account addresses for the receiver and sender to set up this contract. 
-            <br></br>Upon submission, the other party of your rental agreement will be notified of the contract and have the option to accept or deny. Subsequently, if accepted, the transaction will be sent and recorded.
+            <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between tenant and landlord.<br></br>
+            <br></br>
+            <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum account addresses for the receiver and sender to set up this contract.<br></br>
+            <br></br>
+            <FontAwesomeIcon icon={faBell}/> Upon submission, the other party of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
+            <br></br>
+            <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+            <br></br>
+            <a className="helpLink" href="/faq">Need more help? <FontAwesomeIcon icon={faArrowAltCircleRight}/></a>
           </div>
         </div>
         <div className="col-lg-1"></div>

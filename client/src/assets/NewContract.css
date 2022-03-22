@@ -30,8 +30,17 @@
     max-width: 350px;
     width: 100%;
 }
-
 */
+
+.helpLink {
+    color: var(--white);
+    font-weight: bold;
+    font-family: var(--font);
+}
+
+.helpLink:hover {
+    color: var(--main);
+}
 
 .p {
     font-weight: 20px;
@@ -130,28 +139,28 @@ form a {
     }
   }
   
-  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .row {
-      flex-direction: column;
-    }
-  }
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.row {
+    flex-direction: column;
+}
+}
 
-  /*
-  #col1:after {
-    content: "";
-    background-color: var(--main);
-    position: fixed;
-    width: 1px;
-    height: 97%;
-    top: 10px;
-    left: 50%;
-    display: block;
-    margin-left: 10px;
-  }
+/*
+#col1:after {
+content: "";
+background-color: var(--main);
+position: fixed;
+width: 1px;
+height: 97%;
+top: 10px;
+left: 50%;
+display: block;
+margin-left: 10px;
+}
 
-  #col2 {
-    padding-left: 60px;
-    padding-right: 5px;
-  }
-  */
+#col2 {
+padding-left: 60px;
+padding-right: 5px;
+}
+*/

@@ -6,8 +6,8 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import img from '../assets/logo.png';
 
 import "../assets/navbar.css"
 
@@ -52,6 +52,11 @@ function Navigation({ setToken }) {
           </div>
           <div>
             <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/faq">
+                <li><FontAwesomeIcon icon={faQuestionCircle}/></li>
+                </NavLink>
+              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/notifications">
                   <li><FontAwesomeIcon icon={faBell}/></li>

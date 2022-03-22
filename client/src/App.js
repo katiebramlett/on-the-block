@@ -14,7 +14,8 @@ import {
   Contracts,
   Settings,
   CreateAccount,
-  Notifications
+  Notifications,
+  FAQ
 } from "./components";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/contracts" element={<Contracts />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/notifications" element={<Notifications />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Footer />
     </Router>
