@@ -100,10 +100,17 @@ form input[type='text'], form input[type='submit'], form input[type='date'] {
     background: none;
     border-radius: 12px;
     border-bottom: 1px solid var(--main);
-    color: var(--gray);
     text-align: center;
     margin: 15px;
     font-family: var(--font);
+}
+
+form input[type='text'], form input[type='submit'] {
+    color: var(--white);
+}
+
+form input[type='date'] {
+    color: var(--lightgray);
 }
 
 form input[type='submit']
