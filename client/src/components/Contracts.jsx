@@ -11,10 +11,7 @@ function Contracts() {
 
   const {token, setToken } = useToken();
 
-  const [contracts, setContracts] = useState()
-
-  const [displayContracts, setDisplayContracts] = useState()
-
+  const [contracts, setContracts] = useState([])
 
   useEffect(() => {
 
@@ -28,19 +25,10 @@ function Contracts() {
         });
 
       setContracts(response)
-      console.log("CONTRACTS" + contracts)
 
     }    
 
-    const prettycontracts = () => {
-      return (
-        <div>
-        </div>
-      )
-    }
-
     getContracts()
-    setDisplayContracts(prettycontracts())
     
   }, []);
 
@@ -51,21 +39,28 @@ function Contracts() {
           <div className="col-lg-8">
             <h1><b>My Contracts</b></h1>
             <br></br>
+
+            {
+              contracts.map(contract =>  (
+
             <Card className="contract-cards" style={{ width: '65rem', height: '15' }}>
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="contractid">Contract ID:</label>
-                  <label for="landlordid">Landlord ID:</label>
-                  <label for="tenantid">Tenant ID:</label>
-                  <label for="startdate">Start Date: </label><br></br>
-                  <label for="enddate">End Date:</label>
-                  <label for="monthlyfee">Monthly Fee:</label>
-                  <label for="status">Status:</label>
+                  <label for="contractid">Contract ID:</label> {contract.contractid}
+                  <label for="landlordid">Landlord ID:</label> {contract.landlordid}
+                  <label for="tenantid">Tenant ID:</label> {contract.tenantid}
+                  <label for="startdate">Start Date: </label> {contract.startdate} <br></br>
+                  <label for="enddate">End Date:</label> {contract.enddate}
+                  <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee}
+                  <label for="status">Status:</label> {contract.isActive}
                   <Button className="contract-buttons">See Details</Button>
                 </Card.Text>
               </Card.Body>
             </Card>
+              
+            ))}
+
           </div>
         </div>
       </div>
