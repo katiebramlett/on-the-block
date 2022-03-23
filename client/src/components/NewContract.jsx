@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import RentalContract from "../contracts/RentalContract.json";
 import getWeb3 from "../utils/getWeb3";
 import "../assets/NewContract.css"
@@ -6,7 +7,7 @@ import { axiosBackend  } from "../utils/axios";
 import useToken from "../utils/useToken";
 
 
-function NewContract() {
+function NewContract({ smartcontract }) {
 
   const [landlord_addr, setLandlord_addr] = useState();
   const [tenant_addr, setTenant_addr] = useState();
@@ -32,6 +33,9 @@ function NewContract() {
         startdate,
         enddate
       }).then(response => {
+
+        smartcontract.methods.payRent(landlord_addr).send({from: tenant_addr, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
+
         alert("Contract submitted successfully with id" + response.data.contractid)
         // response.data.contractid
       }).catch(e => {
@@ -65,6 +69,11 @@ function NewContract() {
         </div>
       </div>
   );
+}
+
+/* Proptypes check for if the system data matched expected types during runtime */
+NewContract.propTypes = {
+  smartcontract: PropTypes.any.isRequired
 }
 
 export default NewContract;

@@ -9,6 +9,9 @@ function Contracts() {
 
   const [contracts, setContracts] = useState()
 
+  const [displayContracts, setDisplayContracts] = useState()
+
+
   useEffect(() => {
 
     const getContracts = async () => {
@@ -25,7 +28,32 @@ function Contracts() {
 
     }    
 
+    const prettycontracts = () => {
+      return (
+        <div>
+        </div>
+      )
+      
+      // return (
+      //   <div>
+      //     {contracts.map((data) => {
+      //         return (
+      //           <div>
+      //             {
+      //               data.contractid + "," + 
+      //               data.landlordid + ","
+                  
+      //             }
+      //           </div>
+      //         )
+
+      //     })}
+      //   </div>
+      // )
+    }
+
     getContracts()
+    setDisplayContracts(prettycontracts())
     
   }, []);
 
@@ -40,7 +68,9 @@ function Contracts() {
             <h5>Current Contracts</h5>
 
             <p>Contracts:
-              {JSON.stringify(contracts)}
+              {
+                JSON.stringify(contracts)
+              }
             </p>
             
 
