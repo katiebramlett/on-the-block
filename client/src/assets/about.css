@@ -1,0 +1,40 @@
+@import './root.css';
+
+.col-lg-4  {
+    color: var(--white);
+}
+
+.card-text {
+    color: var(--white);
+    font-family: var(--font);
+}
+
+.about-cards {
+    background-color: var(--gray);
+    border: solid var(--main);
+    font-family: var(--font);
+}
+
+.about-buttons {
+    border: none;
+    background: none;
+    display: block;
+    margin: 45px auto 20px auto;
+    text-align: center;
+    border: 1px solid var(--main);
+    padding: 10px 32px;
+    outline: none;
+    color: var(--white);
+    border-radius: 24px;
+    cursor: pointer;
+    font-family: var(--font);
+}
+
+.about-buttons:hover {
+    background-color: var(--main);
+    font-family: var(--font);
+}
+
+.popover {
+    font-family: var(--font);
+}

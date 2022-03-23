@@ -54,7 +54,7 @@ function CreateAccount({ setToken }) {
     return (
         <div className="create-account-wrapper">
             <form onSubmit={createAccount}>
-                <h1>Create an Account</h1>
+                <h1>Create Account</h1>
                 <label>
                     {/* <p>firstname</p> */}
                     {errorFN && <div style={{color: 'white'}}>{errorFN}</div>}
@@ -114,6 +114,7 @@ function CreateAccount({ setToken }) {
             </form>
         </div>
     )
+
 }
 
 CreateAccount.propTypes = {
