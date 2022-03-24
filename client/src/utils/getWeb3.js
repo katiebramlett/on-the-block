@@ -10,6 +10,7 @@ const getWeb3 = () =>
         try {
           // Request account access if needed
           await window.ethereum.enable();
+
           // Accounts now exposed
           resolve(web3);
         } catch (error) {
@@ -22,6 +23,7 @@ const getWeb3 = () =>
         const web3 = window.web3;
         console.log("Injected web3 detected.");
         resolve(web3);
+
       }
       // Fallback to localhost; use dev console port by default...
       else {

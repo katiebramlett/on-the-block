@@ -3,7 +3,9 @@
     --main: #4782FF;
     --darkgray: rgba(0, 0, 0, 0.884);
     --white: #ffffffec;
-    --grayish: #6c757d;
+    --lightgray: #afaeae;
+    --gray: #343a40;
     --lazerlemon: #FCFF5c;
-    --alert: #F34213
+    --alert: #F34213;
+    --font: "Monaco", monospace;
 }
