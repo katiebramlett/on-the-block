@@ -1,0 +1,13 @@
+@import './root.css';
+
+.faq-accordion-header {
+    font-family: var(--font);
+    font-size: 18px;
+}
+
+.faq-accordion-body {
+    background-color: var(--gray);
+    border: solid var(--main);
+    font-family: var(--font);
+    color: var(--white);
+}

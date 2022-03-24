@@ -6,3 +6,6 @@ export { default as NewContract } from "./NewContract";
 export { default as Contracts } from "./Contracts";
 export { default as Settings } from "./Settings";
 export { default as Login } from "./Login";
+export { default as CreateAccount } from "./CreateAccount";
+export { default as Notifications } from "./Notifications";
+export { default as FAQ } from "./FAQ";

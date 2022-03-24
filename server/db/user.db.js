@@ -27,10 +27,16 @@ const getWalletDB = async(userID) => {
 
 // POST queries  
 
-const createUserDB = async(firstname, lastname, username, password, role) => {
+const createUserDB = async(firstname, lastname, username, password) => {
     try {
-        const query = 'INSERT INTO ontheblock_db.users (firstname, lastname, username, password, role) VALUES (?, ?, ?, ?, ?)';
-        return await pool.query(query, [firstname, lastname, username, password, role])
+        var query = 'INSERT INTO ontheblock_db.users (firstname, lastname, username, password) VALUES (?, ?, ?, ?)';
+        var result = await pool.query(query, [firstname, lastname, username, password])
+        
+        query = 'SELECT userID FROM ontheblock_db.users WHERE username=?';
+        result = await pool.query(query, [username])
+
+        return result[0]
+
     } catch(e) {
         console.log(e.message)
         throw(e)

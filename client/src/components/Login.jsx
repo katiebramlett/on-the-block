@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import { axiosBackend  } from "../utils/axios";
-
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import "../assets/login.css"
 
@@ -20,6 +18,7 @@ function Login({ setToken }) {
             .post('login', {username, password})
             .then(response => {
                 setToken(response.data.token)
+                window.location.href = '/' 
             })
             .catch(e => {
                 console.log(e)
@@ -30,9 +29,23 @@ function Login({ setToken }) {
     return (
         <div className="login-wrapper">
             <form onSubmit={loginUser}>
-                <h1> Login </h1>
-                <label><p>username </p><input type="text" onChange={e => setUsername(e.target.value)} placeholder="username"></input></label>
-                <label><p>password </p><input type="password" onChange={e => setPassword(e.target.value)} placeholder="password"></input></label>
+                <h1>Login</h1>
+                <label>
+                    {/* <p>username </p> */}
+                    <input 
+                        type="text" 
+                        onChange={e => setUsername(e.target.value)} 
+                        placeholder="username">
+                    </input>
+                </label>
+                <label>
+                    {/* <p>password </p> */}
+                    <input 
+                        type="password" 
+                        onChange={e => setPassword(e.target.value)} 
+                        placeholder="password">
+                    </input>
+                </label>
                 {
                     error && <div style={{color: 'white'}}>{error}</div>
                 }
@@ -40,7 +53,7 @@ function Login({ setToken }) {
                     <button type="submit">LOGIN</button>
                 </div>
                 <div>
-                    <p>New to On The Block? <br></br> <a href="">Create an account <FontAwesomeIcon icon={faPlus}/></a></p>
+                    <p>New to On The Block? <br></br> <a href="/createAccount">Create an account <span style={{fontSize: '10px', verticalAlign: 'middle'}}><FontAwesomeIcon icon={faPlus}/></span></a></p>
                 </div>
             </form>
         </div>
