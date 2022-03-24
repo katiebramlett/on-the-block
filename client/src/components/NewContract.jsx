@@ -48,7 +48,7 @@ function NewContract({ smartcontract }) {
         console.log(e)
         alert("Error submitting!")
       })
-    
+
   }
   
   /*
