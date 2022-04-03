@@ -1,4 +1,4 @@
-const { verifyLogin, getWallet, createUser, addUserWallet } = require('../services/user.service');
+const { verifyLogin, getWallet, createUser, addUserWallet, getUserInfo, updateUserSettings } = require('../services/user.service');
 
 /* GET requests */
 const login = async (req, res, next) => {
@@ -28,6 +28,20 @@ const getUserWallet = async (req, res, next) => {
     }
 };
 
+// ADDED BY CLAIRE - get all setting info for a user
+const getUserSettingsInfo = async (req, res, next) => {
+    try {
+        const settings = await getUserInfo(req.params.userid)
+
+        res.json({"settings" : settings})
+
+        next()
+    } catch(e) {
+        console.log(e.message)
+        res.sendStatus(500)
+    }
+};
+
 /* POST requests */
 
 /* create a new user to insert into the database */
@@ -49,7 +63,19 @@ const postUser = async (req, res, next) => {
 const postWallet = async (req, res, next) => {
     try {
         // don't need to return anything 
-        await addUserWallet(req.params.userid, req.params.walletaddr);
+        await addUserWallet(req.params.userid);
+        res.sendStatus(201);
+        
+    } catch(e) {
+        console.log(e.message);
+        res.sendStatus(500) & next(error);
+    }
+};
+
+// ADDED BY CLAIRE - update a users settings 
+const postUserSettings = async (req, res, next) => {
+    try { 
+        await updateUserSettings(req.params.userid, req.body.fname, req.body.lname, req.body.uname, req.body.pword);
         res.sendStatus(201);
         
     } catch(e) {
@@ -62,6 +88,8 @@ const postWallet = async (req, res, next) => {
 module.exports = {
     login,
     getUserWallet,
+    getUserSettingsInfo,
     postUser,
-    postWallet
+    postWallet,
+    postUserSettings
 }

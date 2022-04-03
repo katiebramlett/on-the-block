@@ -25,6 +25,20 @@ const getWalletDB = async(userID) => {
     } 
 }
 
+// ADDED BY CLAIRE - Update user settings when a user edits their settings and submits the changes
+const getUserInfoDB = async(userID) => {
+    try {
+        const query = 'SELECT firstname, lastname, username FROM ontheblock_db.users WHERE userID = ?'
+        const result = await pool.query(query, [userID])
+
+        return result[0]
+    } catch (e) {
+        console.log(e.message)
+        throw(e)
+    } 
+}
+
+
 // POST queries  
 
 const createUserDB = async(firstname, lastname, username, password) => {
@@ -53,9 +67,22 @@ const addUserWalletDB = async(userid, walletaddr) => {
     }
 };
 
+// ADDED BY CLAIRE - Update user settings when a user edits their settings and submits the changes
+const updateUserSettingsDB = async(userid, fname, lname, uname, pword) => {
+    try {
+        const query = 'UPDATE ontheblock_db.users SET firstname=?, lastname=?, username=?, password=? WHERE userid=?';
+        return await pool.query(query, [fname, lname, uname, pword, userid]);
+    } catch(e) {
+        console.log(e.message)
+        throw(e)
+    }
+};
+
 module.exports = {
     loginDB,
     getWalletDB,
+    getUserInfoDB,
     createUserDB,
-    addUserWalletDB
+    addUserWalletDB,
+    updateUserSettingsDB
 };
