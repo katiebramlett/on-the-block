@@ -1,4 +1,4 @@
-const { getContractService, postContractService } = require('../services/contract.service');
+const { getContractService, createContractService } = require('../services/contract.service');
 
 const getContract = async (req, res, next) => {
     try {
@@ -13,9 +13,10 @@ const getContract = async (req, res, next) => {
     }
 }
 
-const postContract = async (req, res, next) => {
+const createContract = async (req, res, next) => {
     try {
-        const contract = await postContractService(req.body.token, req.body.landlord_addr, req.body.tenant_addr, 
+        // token=userid
+        const contract = await createContractService(req.body.token, req.body.landlord_addr, req.body.tenant_addr, 
                                     req.body.monthlyfee, req.body.startdate, req.body.enddate)
                                     
         res.status(200).json({'contractid': contract})
@@ -29,5 +30,5 @@ const postContract = async (req, res, next) => {
 
 module.exports = {
     getContract,
-    postContract
+    createContract
 }

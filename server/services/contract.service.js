@@ -1,5 +1,5 @@
 const e = require("express");
-const { getContractDB, postContractDB }  = require("../db/contract.db");
+const { getContractDB, createContractDB }  = require("../db/contract.db");
 
 const getContractService = async (userid) => {
     try {
@@ -12,9 +12,9 @@ const getContractService = async (userid) => {
     }
 }
 
-const postContractService = async(userid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate) => {
+const createContractService = async(userid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate) => {
     try {
-        const result = postContractDB(userid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate)
+        const result = createContractDB(userid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate)
 
         return result
 
@@ -26,5 +26,5 @@ const postContractService = async(userid, landlordwallet, tenantwallet, monthlyf
 
 module.exports = {
     getContractService,
-    postContractService
+    createContractService
 }

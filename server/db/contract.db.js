@@ -12,13 +12,13 @@ const getContractDB = async (userid) => {
     }
 }
 
-const postContractDB = async(landlordid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate) => {
+const createContractDB = async(landlordid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate) => {
     try {
-        const tenantidquery = 'SELECT userid from ontheblock_db.wallets WHERE walletaddr = ?'
+        const tenantidquery = 'SELECT userid FROM ontheblock_db.wallets WHERE walletaddr = ?'
         const tenantid = await pool.query(tenantidquery, [tenantwallet])
 
-        const query = "INSERT INTO ontheblock_db.contracts (landlordid, tenantid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate) VALUES (?, ?, ?, ?, ?, ?, ?)"
-        const result = await pool.query(query, [landlordid, tenantid[0].userid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate])
+        const query = "INSERT INTO ontheblock_db.contracts (landlordid, tenantid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'pending')"
+        const result = await pool.query(query, [landlordid, tenantid[0][0].userid, landlordwallet, tenantwallet, monthlyfee, startdate, enddate])
 
         return result[0].insertId
 
@@ -29,5 +29,5 @@ const postContractDB = async(landlordid, landlordwallet, tenantwallet, monthlyfe
 
 module.exports = {
     getContractDB,
-    postContractDB
+    createContractDB
 };
