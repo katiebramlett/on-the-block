@@ -1,8 +1,35 @@
 const { pool } = require('./db')
 
+// Get all contracts associated with the user (no matter landlord or tenant or status of contract)
 const getContractDB = async (userid) => {
     try {
         const query = 'Select * FROM ontheblock_db.contracts WHERE tenantid = ? OR landlordid = ?'
+        const result = await pool.query(query, [userid, userid])
+
+        return result[0]
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Get contracts that the user is the tenant and needs to approve
+const getPendingTenantDB = async (userid) => {
+    try {
+        const query = 'Select * FROM ontheblock_db.contracts WHERE tenantid = ? AND status = "pending"'
+        const result = await pool.query(query, [userid, userid])
+
+        return result[0]
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// Get contracts that the user is the landlord and is waiting for approval
+const getAwaitingLandlordDB = async (userid) => {
+    try {
+        const query = 'Select * FROM ontheblock_db.contracts WHERE landlordid = ? AND status="pending"'
         const result = await pool.query(query, [userid, userid])
 
         return result[0]
@@ -29,5 +56,7 @@ const createContractDB = async(landlordid, landlordwallet, tenantwallet, monthly
 
 module.exports = {
     getContractDB,
+    getPendingTenantDB,
+    getAwaitingLandlordDB,
     createContractDB
 };
