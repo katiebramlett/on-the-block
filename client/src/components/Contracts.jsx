@@ -38,26 +38,25 @@ function Contracts() {
           <div className="col-lg-8">
             <h1><b>My Contracts</b></h1>
             <br></br>
-
+            
             {
               contracts.map(contract =>  (
 
-            <Card className="contract-cards" style={{ width: '65rem', height: '15' }}>
+            <Card className="contract-cards" style={{ width: '50rem', height: '80' }}>
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordid}&nbsp;&nbsp;
-                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantid}<br></br>
-                  <label for="startdate">Start Date: </label> {contract.startdate}&nbsp;&nbsp;
-                  <label for="enddate">End Date:</label> {contract.enddate}<br></br>
-                  <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
-                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.isActive}&nbsp;&nbsp;
+                  <label for="landlordwallet"><b>Landlord Wallet:</b></label> {contract.landlordwallet}<br></br>
+                  <label for="tenantwallet"><b>Tenant Wallet:</b></label> {contract.tenantwallet}<br></br>
+                  <label for="startdate"><b>Start Date:</b></label> {contract.startdate}<br></br>
+                  <label for="enddate"><b>End Date:</b></label> {contract.enddate}<br></br>
+                  <label for="monthlyfee"><b>Monthly Fee:</b></label> {contract.monthlyfee} ETH<br></br>
+                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}<br></br>
                 </Card.Text>
               </Card.Body>
             </Card>
               
             ))}
-
           </div>
         </div>
       </div>

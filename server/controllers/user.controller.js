@@ -33,7 +33,7 @@ const getUserSettingsInfo = async (req, res, next) => {
     try {
         const settings = await getUserInfo(req.params.userid)
 
-        res.json({"settings" : settings})
+        res.status(200).json({"settings" : settings})
 
         next()
     } catch(e) {
