@@ -40,8 +40,8 @@ function Settings() {
                 <Card.Body>
                   <Card.Title>User Settings</Card.Title>
                   <Card.Text>
-                    <label for="fname"><b>First Name: </b>Katie</label>&nbsp;&nbsp;
-                    <label for="lname"><b>Last Name: </b>Bramlett</label>
+                    <label for="fname"><b>First Name: </b></label>&nbsp;&nbsp;
+                    <label for="lname"><b>Last Name: </b></label>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -50,8 +50,8 @@ function Settings() {
                 <Card.Body>
                   <Card.Title>Account Settings</Card.Title>
                   <Card.Text>
-                    <label for="uname"><b>Username: </b>katiebram</label>&nbsp;&nbsp;
-                    <label for="pword"><b>Password: </b>*********</label><br></br>
+                    <label for="uname"><b>Username: </b></label>&nbsp;&nbsp;
+                    <label for="pword"><b>Password: </b></label><br></br>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -60,7 +60,7 @@ function Settings() {
                 <Card.Body>
                   <Card.Title>Connect Web3 Wallet</Card.Title>
                   <Card.Text>
-                  <label for="walletID"><b>Wallet ID: </b>0xC83D74A1c0A28c49C231Fb02Dd5b0F99F3D80422</label><br></br>
+                  <label for="walletID"><b>Wallet ID: </b></label><br></br>
                   </Card.Text>
                 </Card.Body>
               </Card>

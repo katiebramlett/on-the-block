@@ -8,9 +8,9 @@
 .nav-link li {
     color: var(--white);
     font-family: var(--font);
+    margin-top: 8px;
 }
 
 .nav-link li:hover {
     color: var(--lightgray);
-    font-family: var(--font);
 }

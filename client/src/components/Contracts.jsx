@@ -5,21 +5,8 @@ import useToken from "../utils/useToken";
 import "../assets/contracts.css"
 
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Popover from 'react-bootstrap/Popover';
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 function Contracts() {
-
-  /* DETAILS */
-  const detailsPopover = (
-    <Popover className="popover" id="popover-basic">
-      <Popover.Header as="h3"><b>Contract Details</b></Popover.Header>
-      <Popover.Body>
-          Contract Details
-      </Popover.Body>
-    </Popover>
-  );
 
   const {token, setToken } = useToken();
 
@@ -59,16 +46,12 @@ function Contracts() {
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="contractid">Contract ID:</label> {contract.contractid}&nbsp;&nbsp;
-                  <label for="landlordid">Landlord ID:</label> {contract.landlordid}&nbsp;&nbsp;
-                  <label for="tenantid">Tenant ID:</label> {contract.tenantid}&nbsp;&nbsp;
-                  <label for="startdate">Start Date: </label> {contract.startdate} <br></br>
-                  <label for="enddate">End Date:</label> {contract.enddate}&nbsp;&nbsp;
-                  <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee}&nbsp;&nbsp;
-                  <label for="status">Status:</label> {contract.isActive}&nbsp;&nbsp;
-                  <OverlayTrigger trigger="click" placement="top" overlay={detailsPopover}>
-                    <Button className="contract-buttons">See Details</Button>
-                  </OverlayTrigger>
+                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordid}&nbsp;&nbsp;
+                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantid}<br></br>
+                  <label for="startdate">Start Date: </label> {contract.startdate}&nbsp;&nbsp;
+                  <label for="enddate">End Date:</label> {contract.enddate}<br></br>
+                  <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
+                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.isActive}&nbsp;&nbsp;
                 </Card.Text>
               </Card.Body>
             </Card>
