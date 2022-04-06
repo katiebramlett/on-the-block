@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
+import styles from "../assets/nav.module.css"
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Alerts from "./Alerts";
 
 import "../assets/navbar.css";
 import img from '../assets/logo.png';
@@ -13,12 +17,27 @@ function Navigation({ setToken }) {
 
   /* Remove session token of a logged in user */
 
+  const [notifClick, setnotifClick]  = useState(false)
+
+
   const removeToken = async e => {
     e.preventDefault();
     setToken('');
     sessionStorage.clear();
     window.location.href = '/'
   }
+
+  const notifPopover = (
+
+    // toggle visibility of notification window
+    <Popover className="popover" id="popover-basic">
+        <Popover.Body>
+          <Alerts></Alerts>
+        </Popover.Body>
+      </Popover>
+
+  )
+
 
   return (
     <div className="navigation">
@@ -56,9 +75,11 @@ function Navigation({ setToken }) {
           <div>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/notifications">
-                  <li><FontAwesomeIcon icon={faBell}/></li>
-                </NavLink>
+                <OverlayTrigger trigger="click" placement="bottom" overlay={notifPopover}>
+                  <button className={styles.notifbutton}>
+                    <FontAwesomeIcon icon={faBell}/>
+                  </button>
+                </OverlayTrigger>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/settings">
