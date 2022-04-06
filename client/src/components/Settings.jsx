@@ -113,7 +113,7 @@ function Settings() {
             <div className="col-lg-8">
               <h1><b>Profile & Settings</b></h1>
               <br></br>
-              <Card className="settings-cards" style={{ width: '65rem', height: '10' }}>
+              <Card className="settings-cards" style={{ width: '50rem', height: '10' }}>
                 <Card.Body>
                   <Card.Title>User Settings</Card.Title>
                   <Card.Text>
@@ -123,7 +123,7 @@ function Settings() {
                 </Card.Body>
               </Card>
               <br></br>
-              <Card className="settings-cards" style={{ width: '65rem', height: '10' }}>
+              <Card className="settings-cards" style={{ width: '50rem', height: '10' }}>
                 <Card.Body>
                   <Card.Title>Account Settings</Card.Title>
                   <Card.Text>
@@ -133,7 +133,7 @@ function Settings() {
                 </Card.Body>
               </Card>
               <br></br>
-              <Card className="settings-cards" style={{ width: '65rem', height: '10' }}>
+              <Card className="settings-cards" style={{ width: '50rem', height: '10' }}>
                 <Card.Body>
                   <Card.Title>Web3 Wallet</Card.Title>
                   <Card.Text>
