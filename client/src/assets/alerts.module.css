@@ -1,0 +1,12 @@
+
+
+.alertcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.alertcontainer .alert {
+
+    
+}
