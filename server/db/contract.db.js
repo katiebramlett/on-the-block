@@ -29,7 +29,43 @@ const getPendingTenantDB = async (userid) => {
 // Get contracts that the user is the landlord and is waiting for approval
 const getAwaitingLandlordDB = async (userid) => {
     try {
-        const query = 'Select * FROM ontheblock_db.contracts WHERE landlordid = ? AND status="pending"'
+        const query = 'SELECT * FROM ontheblock_db.contracts WHERE landlordid = ? AND status="pending"'
+        const result = await pool.query(query, [userid, userid])
+
+        return result[0]
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+const getActiveContractsDB = async (userid) => {
+    try {
+        const query = 'Select * FROM ontheblock_db.contracts WHERE tenantid = ? OR landlordid = ? AND status = "active"'
+        const result = await pool.query(query, [userid, userid])
+
+        return result[0]
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+const getDeniedContractsDB = async (userid) => {
+    try {
+        const query = 'SELECT * FROM ontheblock_db.contracts WHERE tenantid = ? OR landlordid = ? AND status = "denied"'
+        const result = await pool.query(query, [userid, userid])
+
+        return result[0]
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+const getTerminatedContractsDB = async (userid) => {
+    try {
+        const query = 'SELECT * FROM ontheblock_db.contracts WHERE tenantid = ? OR landlordid = ? AND status = "terminated"'
         const result = await pool.query(query, [userid, userid])
 
         return result[0]
@@ -54,9 +90,25 @@ const createContractDB = async(landlordid, landlordwallet, tenantwallet, monthly
     }
 }
 
+const updateContractStatustDB = async(contractid, status) => {
+    try {
+        const query = 'UPDATE ontheblock_db.contracts SET status = ? WHERE contractid = ?'
+        const result = await pool.query(query, [status, contractid])
+
+        return result[0].insertId
+
+    } catch (e) {
+        console.log(e)
+    }
+}
+
 module.exports = {
     getContractDB,
     getPendingTenantDB,
     getAwaitingLandlordDB,
-    createContractDB
+    getActiveContractsDB,
+    getDeniedContractsDB,
+    getTerminatedContractsDB,
+    createContractDB,
+    updateContractStatustDB
 };

@@ -1,6 +1,6 @@
 const express = require('express')
 const { login, getUserWallet, postUser, postWallet } = require('../controllers/user.controller')
-const { getContract, getPendingTenant, getAwaitingLandlord, createContract } = require('../controllers/contract.controller')
+const { getContract, getPendingTenant, getAwaitingLandlord, createContract, getActiveContracts, getDeniedContracts, getTerminatedContracts, updateContractStatus } = require('../controllers/contract.controller')
 
 const router = express.Router()
 
@@ -20,8 +20,13 @@ router.post('/users/:userid/wallets/:walletaddr', postWallet)
 router.get('/contracts/:userid', getContract)
 router.get('/contracts/:userid/pending', getPendingTenant)
 router.get('/contracts/:userid/pending', getAwaitingLandlord)
+router.get('/contracts/:userid/active', getActiveContracts)
+router.get('/contracts/:userid/denied', getDeniedContracts)
+router.get('/contracts/:userid/terminated', getTerminatedContracts)
 
 // contract actions -- POST 
 router.post('/contracts', createContract)
+router.post('/contracts/:userid', updateContractStatus) //?
 
 module.exports = router;
+

@@ -1,4 +1,4 @@
-const { getContractService, getPendingTenantService, getAwaitingLandlordService, createContractService } = require('../services/contract.service');
+const { getContractService, getPendingTenantService, getAwaitingLandlordService, getActiveContractsService, getDeniedContractsService, getTerminatedContractsService, createContractService, updateContractStatusService } = require('../services/contract.service');
 
 const getContract = async (req, res, next) => {
     try {
@@ -39,6 +39,45 @@ const getAwaitingLandlord = async (req, res, next) => {
     }
 }
 
+const getActiveContracts = async (req, res, next) => {
+    try {
+        const contracts = await getActiveContractsService(req.params.userid)
+
+        res.status(200).json(contracts)
+
+    } catch (e) {
+        console.log(e)
+
+        res.sendStatus(500)
+    }
+}
+
+const getDeniedContracts = async (req, res, next) => {
+    try {
+        const contracts = await getDeniedContractsService(req.params.userid)
+
+        res.status(200).json(contracts)
+
+    } catch (e) {
+        console.log(e)
+
+        res.sendStatus(500)
+    }
+}
+
+const getTerminatedContracts = async (req, res, next) => {
+    try {
+        const contracts = await getTerminatedContractsService(req.params.userid)
+
+        res.status(200).json(contracts)
+
+    } catch (e) {
+        console.log(e)
+
+        res.sendStatus(500)
+    }
+}
+
 const createContract = async (req, res, next) => {
     try {
         // token=userid
@@ -54,9 +93,27 @@ const createContract = async (req, res, next) => {
     }
 }
 
+const updateContractStatus = async (req, res, next) => {
+    try {
+        // token=userid
+        const contract = await updateContractStatusService(req.body.token, req.body.status)
+                                    
+        res.status(200).json({'contractid': contract})
+
+    } catch (e) {
+        console.log(e)
+
+        res.sendStatus(500)
+    }
+}
+
 module.exports = {
     getContract,
     getPendingTenant,
     getAwaitingLandlord,
-    createContract
+    getActiveContracts,
+    getDeniedContracts,
+    getTerminatedContracts,
+    createContract,
+    updateContractStatus
 }
