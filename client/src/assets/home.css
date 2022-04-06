@@ -38,7 +38,6 @@ label {
 
 b {
     color: var(--main);
-    font-family: var(--font);
 }
 
 .infoLink {

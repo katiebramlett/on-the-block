@@ -66,7 +66,6 @@ function About() {
                 <Card.Text>
                   <b>ON THE BLOCK</b> allows users to easily set up rental payments at the touch of a button using blockchain technology.
                 </Card.Text>
-                <br></br><br></br><br></br>
                 <OverlayTrigger trigger="click" placement="top" overlay={howitworksPopover}>
                   <Button className="about-buttons">Learn How It Works</Button>
                 </OverlayTrigger>
@@ -80,7 +79,7 @@ function About() {
                 <Card.Text>
                   Blockchain technology offers numerous benefits for rental contracts.
                 </Card.Text>
-                <br></br><br></br><br></br><br></br><br></br>
+                <br></br>
                 <OverlayTrigger trigger="click" placement="top" overlay={benefitsPopover}>
                   <Button className="about-buttons">View Our Benefits</Button>
                 </OverlayTrigger>
@@ -95,7 +94,6 @@ function About() {
                   <b>ON THE BLOCK</b> offers numerous features to easily create and terminate rental contracts.
                   Plus, you'll get helpful alerts about your contracts!
                 </Card.Text>
-                <br></br>
                 <OverlayTrigger trigger="click" placement="top" overlay={featuresPopover}>
                   <Button className="about-buttons">See Our Features</Button>
                 </OverlayTrigger>

@@ -1,15 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { faUserCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
-import "../assets/navbar.css"
+import "../assets/navbar.css";
+import img from '../assets/logo.png';
 
 function Navigation({ setToken }) {
 
@@ -30,7 +28,12 @@ function Navigation({ setToken }) {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <NavLink className="navbar-brand" to="/">
-                  <li><FontAwesomeIcon icon={faHome}/> <b>ON THE BLOCK</b></li>
+                  <li><img
+                      src={img}
+                      alt=""
+                      width="60"
+                      height="40"
+                  /></li>
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -52,11 +55,6 @@ function Navigation({ setToken }) {
           </div>
           <div>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/faq">
-                <li><FontAwesomeIcon icon={faQuestionCircle}/></li>
-                </NavLink>
-              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/notifications">
                   <li><FontAwesomeIcon icon={faBell}/></li>
