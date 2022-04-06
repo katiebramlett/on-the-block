@@ -46,9 +46,8 @@ function Contracts() {
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="contractid">Contract ID:</label> {contract.contractid}&nbsp;&nbsp;
-                  <label for="landlordid">Landlord ID:</label> {contract.landlordid}&nbsp;&nbsp;
-                  <label for="tenantid">Tenant ID:</label> {contract.tenantid}<br></br>
+                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordid}&nbsp;&nbsp;
+                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantid}<br></br>
                   <label for="startdate">Start Date: </label> {contract.startdate}&nbsp;&nbsp;
                   <label for="enddate">End Date:</label> {contract.enddate}<br></br>
                   <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
