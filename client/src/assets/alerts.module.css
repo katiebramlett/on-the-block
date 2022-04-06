@@ -1,12 +1,43 @@
+@import './root.css';
 
 
 .alertcontainer {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    padding: 10px 5px 10px 5px;
 }
 
 
 .alertcontainer .alert {
-
-    
+    padding: 10px 10px 5px 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 1px 1px 1px 1px var(--main);
+    align-items: baseline; 
 }
+
+.alertcontainer .alert a {
+    color: var(--main);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.alertcontainer .alert a:hover {
+    color: gray;
+}
+
+.alertcontainer .alert p {
+    color: black;
+}
+
+/* .alertcontainer .alert h4 {
+    color: black;
+    font-size: 14px;
+    
+} */
