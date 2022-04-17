@@ -79,9 +79,9 @@ const createContractService = async(userid, landlordwallet, tenantwallet, monthl
 
 }
 
-const updateContractStatusService = async(userid, status) => {
+const updateContractStatusService = async(contractid, status) => {
     try {
-        const result = updateContractStatusDB(userid, status)
+        const result = updateContractStatusDB(contractid, status)
 
         return result
 
