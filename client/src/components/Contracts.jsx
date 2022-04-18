@@ -12,6 +12,9 @@ function Contracts() {
 
   const [contracts, setContracts] = useState([])
 
+
+  const message = "No contracts found."
+
   useEffect(() => {
 
     const getContracts = async () => {
