@@ -49,10 +49,10 @@ function Contracts() {
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordid}&nbsp;&nbsp;
-                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantid}<br></br>
-                  <label for="startdate">Start Date: </label> {contract.startdate}&nbsp;&nbsp;
-                  <label for="enddate">End Date:</label> {contract.enddate}<br></br>
+                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordwallet}&nbsp;&nbsp;
+                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantwallet}<br></br>
+                  <label for="startdate">Start Date: </label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
+                  <label for="enddate">End Date:</label> {contract.enddate.split('T')[0]}<br></br>
                   <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
                   <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.isActive}&nbsp;&nbsp;
                 </Card.Text>
