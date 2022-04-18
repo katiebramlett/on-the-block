@@ -36,12 +36,17 @@ function Contracts() {
   }
 
   /* only display buttons if the id of the user = tenant id and the contract is pending */
-  const checkButtons = (id, status) => {
+  const checkButtons = (id, status, contractid) => {
 
-    if (id == token && status == 'pending') return true;
+    if (id == token && status == 'pending') return <Buttons contractid={contractid}></Buttons>;
 
-    return false;
+    else if (status == 'active') return (
+      <div>
+        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid)}>End Contract</button>
+      </div>
+    )
 
+    return ;
   }
 
   /* update status of one contract */
@@ -91,7 +96,7 @@ function Contracts() {
                   <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
                   
                   {
-                    checkButtons(contract.tenantid, contract.status) ? <Buttons contractid={contract.contractid}></Buttons> :  ''
+                    checkButtons(contract.tenantid, contract.status, contract.contractid)
                   }
 
                 </Card.Text>
