@@ -97,7 +97,7 @@ const updateContractStatus = async (req, res, next) => {
     try {
         // token=userid
         const contract = await updateContractStatusService(req.body.contractid, req.body.status)
-                                    
+             
         res.status(200).json({'contractid': contract})
 
     } catch (e) {

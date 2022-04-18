@@ -61,6 +61,8 @@ function Contracts() {
                   <label for="enddate">End Date:</label> {contract.enddate.split('T')[0]}<br></br>
                   <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
                   <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
+                  
+
                 </Card.Text>
               </Card.Body>
             </Card>

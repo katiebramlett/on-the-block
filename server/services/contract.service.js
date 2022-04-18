@@ -81,14 +81,13 @@ const createContractService = async(userid, landlordwallet, tenantwallet, monthl
 
 const updateContractStatusService = async(contractid, status) => {
     try {
-        const result = updateContractStatusDB(contractid, status)
+        const result = updateContractStatustDB(contractid, status)
 
         return result
 
     } catch {
         console.log(e)
     }
-
 }
 
 module.exports = {
