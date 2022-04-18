@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosBackend  } from "../utils/axios";
 import useToken from "../utils/useToken";
+import styles from '../assets/contract.module.css'
 
 import "../assets/contracts.css"
 
@@ -34,6 +35,23 @@ function Contracts() {
     
   }, []);
 
+  const checkRole = (id) => {
+
+    if (id == token) return true;
+
+    return false;
+
+  }
+
+  function Buttons( contractId ) {
+    return ( 
+      <div>
+        <button className={styles.approvebutton} onclick={updateStatus('active', contractId)}>Approve</button>
+        <button className={styles.denyButton} onclick={updateStatus('active', contractId)}>Deny</button>
+      </div>
+    )
+  }  
+
   const updateStatus = () => {
 
     /* make backend call to update status */ 
@@ -62,6 +80,9 @@ function Contracts() {
                   <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
                   <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
                   
+                  {
+                    checkRole(contract.tenantid) ? <Buttons contractId={contract.contractid}></Buttons> :  ''
+                  }
 
                 </Card.Text>
               </Card.Body>
