@@ -34,6 +34,12 @@ function Contracts() {
     
   }, []);
 
+  const updateStatus = () => {
+
+    /* make backend call to update status */ 
+
+  }
+
   return (
     <div className="settings">
       <div className="container">
@@ -45,7 +51,7 @@ function Contracts() {
             {
               contracts.map(contract =>  (
 
-            <Card className="contract-cards" style={{ width: '65rem', height: '15' }}>
+            <Card className="contract-cards" style={{ width: '65rem', height: '15', marginBottom: '15px'}}>
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
@@ -54,11 +60,11 @@ function Contracts() {
                   <label for="startdate">Start Date: </label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
                   <label for="enddate">End Date:</label> {contract.enddate.split('T')[0]}<br></br>
                   <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
-                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.isActive}&nbsp;&nbsp;
+                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
                 </Card.Text>
               </Card.Body>
             </Card>
-              
+  
             ))}
 
           </div>
