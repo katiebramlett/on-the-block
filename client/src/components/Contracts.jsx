@@ -6,6 +6,7 @@ import styles from '../assets/contract.module.css'
 import "../assets/contracts.css"
 
 import Card from 'react-bootstrap/Card';
+import axios from "axios";
 
 function Contracts() {
 
@@ -16,47 +17,56 @@ function Contracts() {
 
   const message = "No contracts found."
 
-  useEffect(() => {
-
-    const getContracts = async () => {
-
-      const response = await axiosBackend
-        .get('contracts/' + token, )
-        .then(response => response.data)
-        .catch(e => {
-            console.log(e)
-        });
-
-      setContracts(response)
-
-    }    
+  useEffect(() => {    
 
     getContracts()
     
   }, []);
 
-  const checkRole = (id) => {
+  const getContracts = async () => {
 
-    if (id == token) return true;
+    const response = await axiosBackend
+      .get('contracts/' + token, )
+      .then(response => response.data)
+      .catch(e => {
+          console.log(e)
+      });
+
+    setContracts(response)
+  }
+
+  /* only display buttons if the id of the user = tenant id and the contract is pending */
+  const checkButtons = (id, status) => {
+
+    if (id == token && status == 'pending') return true;
 
     return false;
 
   }
 
-  function Buttons( contractId ) {
+  /* update status of one contract */
+
+  const updateStatus = async(e, status, contractid) => {
+    console.log("calling backend with " + contractid + " and status " + status)
+    
+    axiosBackend
+      .post('contracts/update', {contractid, status})
+      .then(response => {})
+      .catch(e => {
+        console.log(e)
+      })
+
+    window.location.reload()
+  }
+
+  function Buttons( contractid ) {
     return ( 
       <div>
-        <button className={styles.approvebutton} onclick={updateStatus('active', contractId)}>Approve</button>
-        <button className={styles.denyButton} onclick={updateStatus('active', contractId)}>Deny</button>
+        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid)}>Approve </button>
+        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid.contractid)}>Deny</button>
       </div>
     )
   }  
-
-  const updateStatus = () => {
-
-    /* make backend call to update status */ 
-
-  }
 
   return (
     <div className="settings">
@@ -81,7 +91,7 @@ function Contracts() {
                   <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
                   
                   {
-                    checkRole(contract.tenantid) ? <Buttons contractId={contract.contractid}></Buttons> :  ''
+                    checkButtons(contract.tenantid, contract.status) ? <Buttons contractid={contract.contractid}></Buttons> :  ''
                   }
 
                 </Card.Text>
