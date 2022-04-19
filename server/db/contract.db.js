@@ -95,7 +95,7 @@ const updateContractStatustDB = async(contractid, status) => {
         const query = 'UPDATE ontheblock_db.contracts SET status = ? WHERE contractid = ?'
         const result = await pool.query(query, [status, contractid])
 
-        return result[0].insertId
+        return result[0].updatetId
 
     } catch (e) {
         console.log(e)

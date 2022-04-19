@@ -96,7 +96,7 @@ const createContract = async (req, res, next) => {
 const updateContractStatus = async (req, res, next) => {
     try {
         // token=userid
-        const contract = await updateContractStatusService(req.body.token, req.body.status)
+        const contract = await updateContractStatusService(req.body.contractid, req.body.status)
                                     
         res.status(200).json({'contractid': contract})
 

@@ -18,15 +18,15 @@ router.post('/users/:userid/wallets/:walletaddr', postWallet)
 
 // contract actions -- GET
 router.get('/contracts/:userid', getContract)
-router.get('/contracts/:userid/pending', getPendingTenant)
-router.get('/contracts/:userid/pending', getAwaitingLandlord)
+router.get('/contracts/:userid/pending/tenant', getPendingTenant)
+router.get('/contracts/:userid/pending/landlord', getAwaitingLandlord)
 router.get('/contracts/:userid/active', getActiveContracts)
 router.get('/contracts/:userid/denied', getDeniedContracts)
 router.get('/contracts/:userid/terminated', getTerminatedContracts)
 
 // contract actions -- POST 
 router.post('/contracts', createContract)
-router.post('/contracts/:userid', updateContractStatus) //?
+router.post('/contracts/update', updateContractStatus) //?
 
 // ADDED BY CLAIRE - routes for getting and settings a user's settings
 router.get('/users/:userid', getUserSettingsInfo)
