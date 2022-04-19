@@ -1,4 +1,5 @@
 const express = require('express')
+
 const { login, getUserWallet, getUserSettingsInfo, postUser, postWallet, postUserSettings } = require('../controllers/user.controller')
 const { getContract, postContract, getPendingTenant, getAwaitingLandlord, createContract, getActiveContracts, getDeniedContracts, getTerminatedContracts, updateContractStatus } = require('../controllers/contract.controller')
 
@@ -29,8 +30,8 @@ router.post('/contracts', createContract)
 router.post('/contracts/update', updateContractStatus) //?
 
 // ADDED BY CLAIRE - routes for getting and settings a user's settings
-router.get('/users/:userid', getUserSettingsInfo)
-router.post('/users/:userid', postUserSettings) // not sure these are right, check!
+// router.get('/users/:userid', getUserSettingsInfo)
+// router.post('/users/:userid', postUserSettings) // not sure these are right, check!
 
 module.exports = router;
 

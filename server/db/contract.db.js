@@ -92,7 +92,7 @@ const createContractDB = async(landlordid, landlordwallet, tenantwallet, monthly
 
 const updateContractStatustDB = async(contractid, status) => {
     try {
-        const query = 'UPDATE ontheblock_db.contracts SET status = ? WHERE contractid = ?'
+        const query = 'UPDATE ontheblock_db.contracts SET status=? WHERE contractid=?'
         const result = await pool.query(query, [status, contractid])
 
         return result[0].updatetId
