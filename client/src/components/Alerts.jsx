@@ -43,7 +43,7 @@ function Alerts() {
     return (
         <div className={styles.alertcontainer}>
             {alert}
-            {alert}
+            {/* {alert} */}
 
         </div>
     )

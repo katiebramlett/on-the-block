@@ -84,7 +84,7 @@ function NewContract({ smartcontract }) {
         <div className="col-lg-5">
           <h1><span style={{color: 'var(--main)'}}>Start New Contract</span></h1>
           <form onSubmit={createContract}>
-            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" value={walletAddr} onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
+            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
             <input type="text" placeholder="Tenant Account Number" name="tenant_addr" onChange={e => setTenant_addr(e.target.value)}></input><br></br>
             <input type="text" placeholder="Monthly Amount (in ETH)" name="monthlyfee" onChange={e => setMonthlyfee(e.target.value)} ></input><br></br>
             <input type="date" min={today} name="startdate" onChange={e => setStartDate(e.target.value)} ></input><br></br>

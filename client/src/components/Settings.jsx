@@ -161,7 +161,8 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setFirstname(e.target.value)} 
-                          value={fname}>
+                          placeholder="first name">    
+                          {/* value={fname}> */}
                       </input>
                   </label>
                   <br></br>
@@ -170,7 +171,8 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setLastname(e.target.value)} 
-                          value={lname}>
+                          placeholder="last name">    
+                          {/* value={lname}> */}
                       </input>
                   </label>
                   <br></br>
@@ -179,7 +181,8 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setUsername(e.target.value)} 
-                          value={uname}>
+                          placeholder="username">    
+                          {/* value={uname}> */}
                       </input>
                   </label>
                   <br></br>
@@ -206,7 +209,8 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setWalletID(e.target.value)} 
-                          value={walletAddr}>
+                          placeholder="wallet address">    
+                          {/* value={walletAddr}> */}
                       </input>
                   </label>
                   <div>
