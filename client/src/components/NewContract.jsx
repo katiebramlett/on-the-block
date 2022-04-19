@@ -67,8 +67,6 @@ function NewContract({ smartcontract }) {
         enddate
       }).then(response => {
 
-        smartcontract.methods.payRent(landlord_addr).send({from: tenant_addr, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
-
         alert("Contract submitted successfully with id" + response.data.contractid)
         // response.data.contractid
       }).catch(e => {

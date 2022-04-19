@@ -14,11 +14,11 @@ function Settings() {
   const [settings, setSettings] = useState([])
   const [wallets, setWallets] = useState([])
   // define functions and state variables 
-  const [fname, setFirstname] = useState();
-  const [lname, setLastname] = useState();
-  const [uname, setUsername] = useState();
-  const [pword, setPassword] = useState();
-  const [confirmPword, setconfirmPassword] = useState();
+  const [fname, setFname] = useState();
+  const [lname, setLname] = useState();
+  const [uname, setUname] = useState();
+  const [pword, setPword] = useState();
+  const [confirmPword, setconfirmPword] = useState();
   const [walletID, setWalletID] = useState();
   const [edit, setEdit] = useState(false);
   const [walletAddr, setWalletAddr] = useState();
@@ -40,9 +40,9 @@ function Settings() {
         });
 
       setSettings(response)
-      setFirstname(response.settings[0].firstname)
-      setLastname(response.settings[0].lastname)
-      setUsername(response.settings[0].username)
+      setFname(response.settings[0].firstname)
+      setLname(response.settings[0].lastname)
+      setUname(response.settings[0].username)
 
     }    
 
@@ -53,9 +53,9 @@ function Settings() {
       const response = await axiosBackend
         .get('/users/' + token + '/wallets/', )
         .then(response => response.data)
-            // alert("Settings loaded successfully")
+            // alert("Wallets loaded successfully")
             // response.data.contractid
-            // setSettings(response)
+            // setWallets(response)
 
         .catch(e => {
             console.log(e)
@@ -160,7 +160,7 @@ function Settings() {
                       {/* <p>firstname</p> */}
                       <input 
                           type="text" 
-                          onChange={e => setFirstname(e.target.value)} 
+                          onChange={e => setFname(e.target.value)} 
                           placeholder="first name">    
                           {/* value={fname}> */}
                       </input>
@@ -170,7 +170,7 @@ function Settings() {
                       {/* <p>lastname</p> */}
                       <input 
                           type="text" 
-                          onChange={e => setLastname(e.target.value)} 
+                          onChange={e => setLname(e.target.value)} 
                           placeholder="last name">    
                           {/* value={lname}> */}
                       </input>
@@ -180,7 +180,7 @@ function Settings() {
                       {/* <p>username</p> */}
                       <input 
                           type="text" 
-                          onChange={e => setUsername(e.target.value)} 
+                          onChange={e => setUname(e.target.value)} 
                           placeholder="username">    
                           {/* value={uname}> */}
                       </input>
@@ -190,7 +190,7 @@ function Settings() {
                       {/* <p>password</p> */}
                       <input 
                           type="text" 
-                          onChange={e => setPassword(e.target.value)} 
+                          onChange={e => setPword(e.target.value)} 
                           placeholder="password">
                       </input>
                   </label>
@@ -199,7 +199,7 @@ function Settings() {
                       {/* <p>confirm password</p> */}
                       <input 
                           type="text" 
-                          onChange={e => setconfirmPassword(e.target.value)} 
+                          onChange={e => setconfirmPword(e.target.value)} 
                           placeholder="confirm password">    
                       </input>
                   </label>

@@ -30,8 +30,8 @@ router.post('/contracts', createContract)
 router.post('/contracts/update', updateContractStatus) //?
 
 // ADDED BY CLAIRE - routes for getting and settings a user's settings
-// router.get('/users/:userid', getUserSettingsInfo)
-// router.post('/users/:userid', postUserSettings) // not sure these are right, check!
+router.get('/users/:userid', getUserSettingsInfo)
+router.post('/users/:userid', postUserSettings) // not sure these are right, check!
 
 module.exports = router;
 

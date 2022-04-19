@@ -3,6 +3,9 @@ import { axiosBackend  } from "../utils/axios";
 import useToken from "../utils/useToken";
 import styles from '../assets/contract.module.css'
 
+import RentalContract from "../contracts/RentalContract.json";
+import getWeb3 from "../utils/getWeb3";
+
 import "../assets/contracts.css"
 
 import Card from 'react-bootstrap/Card';
@@ -50,7 +53,6 @@ function Contracts() {
   }
 
   /* update status of one contract */
-
   const updateStatus = async(e, status, contractid) => {
     console.log("calling backend with " + contractid + " and status " + status)
     
@@ -64,10 +66,20 @@ function Contracts() {
     window.location.reload()
   }
 
+  // Send money in transaction upon contract being set as active
+  function Transaction (contractid) {
+
+    // Get landlord and tenant wallets from contract
+    // TO DO
+    
+    // Call smart contract pay rent function to send money
+    // smartcontract.methods.payRent(landlordwallet).send({from: tenantwallet, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
+  }
+
   function Buttons( contractid ) {
     return ( 
       <div>
-        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid)}>Approve </button>
+        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid) && Transaction(contractid.contractid)}>Approve </button>
         <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid.contractid)}>Deny</button>
       </div>
     )
@@ -88,12 +100,12 @@ function Contracts() {
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordwallet}&nbsp;&nbsp;
-                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantwallet}<br></br>
-                  <label for="startdate">Start Date: </label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
-                  <label for="enddate">End Date:</label> {contract.enddate.split('T')[0]}<br></br>
-                  <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
-                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
+                  <label for="landlordwallet"><span style={{color: 'var(--main)'}}>Landlord Wallet:</span></label> {contract.landlordwallet}<br></br>
+                  <label for="tenantwallet"><span style={{color: 'var(--main)'}}>Tenant Wallet:</span></label> {contract.tenantwallet}<br></br>
+                  <label for="startdate"><span style={{color: 'var(--main)'}}>Start Date: </span></label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
+                  <label for="enddate"><span style={{color: 'var(--main)'}}>End Date:</span></label> {contract.enddate.split('T')[0]}<br></br>
+                  <label for="monthlyfee"><span style={{color: 'var(--main)'}}>Monthly Fee:</span></label> {contract.monthlyfee} ETH&nbsp;&nbsp;
+                  <label for="status"><span style={{color: 'var(--alert)'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
                   
                   {
                     checkButtons(contract.tenantid, contract.status, contract.contractid)
