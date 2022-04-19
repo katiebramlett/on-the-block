@@ -13,7 +13,7 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
-function NewContract({ smartcontract }) {
+function NewContract() {
 
   const [landlord_addr, setLandlord_addr] = useState();
   const [tenant_addr, setTenant_addr] = useState();
@@ -92,16 +92,16 @@ function NewContract({ smartcontract }) {
         </div>
         <div className="col-lg-5">
           <h1> Your Rental Contract </h1>
-          <div className="p">
-            <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between you and your tenant.<br></br>
-            <br></br>
-            <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
-            <br></br>
-            <FontAwesomeIcon icon={faBell}/> Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
-            <br></br>
-            <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+            <div className="p">
+              <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between you and your tenant.<br></br>
+              <br></br>
+              <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
+              <br></br>
+              <FontAwesomeIcon icon={faBell}/> Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
+              <br></br>
+              <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+            </div>
           </div>
-        </div>
         <div className="col-lg-1"></div>
       </div>
     </div>
@@ -109,8 +109,8 @@ function NewContract({ smartcontract }) {
 }
 
 /* Proptypes check for if the system data matched expected types during runtime */
-NewContract.propTypes = {
+/*NewContract.propTypes = {
   smartcontract: PropTypes.any.isRequired
-}
+}*/
 
 export default NewContract;

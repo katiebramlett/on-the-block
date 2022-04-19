@@ -3,6 +3,7 @@ import { axiosBackend  } from "../utils/axios";
 import useToken from "../utils/useToken";
 import styles from '../assets/contract.module.css'
 
+import PropTypes from 'prop-types';
 import RentalContract from "../contracts/RentalContract.json";
 import getWeb3 from "../utils/getWeb3";
 
@@ -11,7 +12,7 @@ import "../assets/contracts.css"
 import Card from 'react-bootstrap/Card';
 import axios from "axios";
 
-function Contracts() {
+function Contracts({ smartcontract }) {
 
   const {token, setToken } = useToken();
 
@@ -55,7 +56,10 @@ function Contracts() {
   /* update status of one contract */
   const updateStatus = async(e, status, contractid) => {
     console.log("calling backend with " + contractid + " and status " + status)
-    
+    const landlordwallet = contractid.landlordwallet
+    const tenantwallet = contractid.tenantwallet
+    const monthlyfee = contractid.monthlyfee
+
     axiosBackend
       .post('contracts/update', {contractid, status})
       .then(response => {})
@@ -63,23 +67,23 @@ function Contracts() {
         console.log(e)
       })
 
+    if (status = 'active') {
+      // Transaction(contractid, landlordwallet, tenantwallet, monthlyfee)
+    }
+
     window.location.reload()
   }
 
   // Send money in transaction upon contract being set as active
-  function Transaction (contractid) {
-
-    // Get landlord and tenant wallets from contract
-    // TO DO
-    
+  function Transaction (contractid, landlordwallet, tenantwallet, monthlyfee) {
     // Call smart contract pay rent function to send money
-    // smartcontract.methods.payRent(landlordwallet).send({from: tenantwallet, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
+    smartcontract.methods.payRent(landlordwallet).send({from: tenantwallet, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
   }
 
   function Buttons( contractid ) {
     return ( 
       <div>
-        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid) && Transaction(contractid.contractid)}>Approve </button>
+        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid)}>Approve </button>
         <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid.contractid)}>Deny</button>
       </div>
     )
@@ -100,8 +104,8 @@ function Contracts() {
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="landlordwallet"><span style={{color: 'var(--main)'}}>Landlord Wallet:</span></label> {contract.landlordwallet}<br></br>
-                  <label for="tenantwallet"><span style={{color: 'var(--main)'}}>Tenant Wallet:</span></label> {contract.tenantwallet}<br></br>
+                  <label for="landlordwallet"><span style={{color: 'var(--main)'}}>Landlord Wallet:</span></label> <span style={{color: 'var(--lightgray)'}}>{contract.landlordwallet}</span><br></br>
+                  <label for="tenantwallet"><span style={{color: 'var(--main)'}}>Tenant Wallet:</span></label> <span style={{color: 'var(--lightgray)'}}>{contract.tenantwallet}</span><br></br>
                   <label for="startdate"><span style={{color: 'var(--main)'}}>Start Date: </span></label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
                   <label for="enddate"><span style={{color: 'var(--main)'}}>End Date:</span></label> {contract.enddate.split('T')[0]}<br></br>
                   <label for="monthlyfee"><span style={{color: 'var(--main)'}}>Monthly Fee:</span></label> {contract.monthlyfee} ETH&nbsp;&nbsp;
@@ -121,6 +125,11 @@ function Contracts() {
       </div>
     </div>
   );
+}
+
+/* Proptypes check for if the system data matched expected types during runtime */
+Contracts.propTypes = {
+  smartcontract: PropTypes.any.isRequired
 }
 
 export default Contracts;

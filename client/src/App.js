@@ -85,8 +85,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/newContract" element={<NewContract smartcontract={ instance }/>} />
-        <Route path="/contracts" element={<Contracts />} />
+        <Route path="/newContract" element={<NewContract/>} />
+        <Route path="/contracts" element={<Contracts smartcontract={ instance }/>} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/notifications" element={<Notifications />} />
       </Routes>
