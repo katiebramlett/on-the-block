@@ -67,6 +67,16 @@ const addUserWalletDB = async(userid, walletaddr) => {
     }
 };
 
+const updateWalletDB = async(userid, walletaddr) => {
+    try {
+        const query = 'UPDATE ontheblock_db.wallets SET walletaddr=? WHERE userid=?';
+        return await pool.query(query, [walletaddr, userid]);
+    } catch(e) {
+        console.log(e.message)
+        throw(e)
+    }
+}
+
 // ADDED BY CLAIRE - Update user settings when a user edits their settings and submits the changes
 const updateUserSettingsDB = async(userid, fname, lname, uname, pword) => {
     try {
@@ -81,6 +91,7 @@ const updateUserSettingsDB = async(userid, fname, lname, uname, pword) => {
 module.exports = {
     loginDB,
     getWalletDB,
+    updateWalletDB,
     getUserInfoDB,
     createUserDB,
     addUserWalletDB,

@@ -1,4 +1,4 @@
-const { verifyLogin, getWallet, createUser, addUserWallet, getUserInfo, updateUserSettings } = require('../services/user.service');
+const { verifyLogin, getWallet, createUser, addUserWallet, getUserInfo, updateUserSettings, updateWallet } = require('../services/user.service');
 
 /* GET requests */
 const login = async (req, res, next) => {
@@ -27,6 +27,21 @@ const getUserWallet = async (req, res, next) => {
         res.sendStatus(500)
     }
 };
+
+/* update user's wallet */
+const postUpdateWallet = async (req, res, next) => {
+    try {
+        const wallet = await updateWallet(req.params.userid, req.body.walletaddr)
+
+        res.sendStatus(200)
+
+        next()
+    } catch(e) {
+        console.log(e.message)
+        res.sendStatus(500)
+    }
+};
+
 
 // ADDED BY CLAIRE - get all setting info for a user
 const getUserSettingsInfo = async (req, res, next) => {
@@ -91,5 +106,6 @@ module.exports = {
     getUserSettingsInfo,
     postUser,
     postWallet,
-    postUserSettings
+    postUserSettings,
+    postUpdateWallet
 }
