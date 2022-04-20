@@ -61,9 +61,11 @@ function Settings() {
             console.log(e)
             // alert("Error loading!")
         });
-
-      setWallets(response)
-      setWalletAddr(response.wallets[0].walletaddr)
+      
+      if (response != null) {
+        setWallets(response)
+        setWalletAddr(response.wallets[0].walletaddr)
+      }
     }    
 
     getWallets()

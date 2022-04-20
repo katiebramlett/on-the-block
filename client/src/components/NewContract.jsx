@@ -29,30 +29,6 @@ function NewContract() {
 
   const today = new Date().toISOString().split("T")[0]
 
-  useEffect(() => {
-
-    const getWallets = async e => {
-
-      const response = await axiosBackend
-        .get('/users/' + token + '/wallets/', )
-        .then(response => response.data)
-            // alert("Settings loaded successfully")
-            // response.data.contractid
-            // setSettings(response)
-
-        .catch(e => {
-            console.log(e)
-            // alert("Error loading!")
-        });
-
-      setWallets(response)
-      setWalletAddr(response.wallets[0].walletaddr)
-    }    
-
-    getWallets()
-    
-  }, [])
-
   const createContract = async e => {
 
     e.preventDefault()
@@ -67,7 +43,7 @@ function NewContract() {
         enddate
       }).then(response => {
 
-        alert("Contract submitted successfully with id" + response.data.contractid)
+        alert("Contract submitted successfully between " + response.data.landlord_addr + " and " + response.data.tenant_addr + " with amount " + response.data.monthlyfee + " for dates " + response.data.startdate + " to " + response.data.enddate)
         // response.data.contractid
       }).catch(e => {
         console.log(e)
