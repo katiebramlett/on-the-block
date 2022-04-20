@@ -30,7 +30,7 @@ function App() {
   // const [accounts, setAccounts] = useState()
   // const [networkID, setNetworkID] = useState()
   // const [deployedNetwork, setDeployedNetwork] = useState()
-  // const [instance, setInstance] = useState()
+  const [instance, setInstance] = useState()
 
   useEffect(() => {
     if (token) {
@@ -85,8 +85,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/newContract" element={<NewContract smartcontract={ instance }/>} />
-        <Route path="/contracts" element={<Contracts smartcontract={ instance } />} />
+        <Route path="/newContract" element={<NewContract/>} />
+        <Route path="/contracts" element={<Contracts smartcontract={ instance }/>} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/notifications" element={<Notifications />} />
       </Routes>

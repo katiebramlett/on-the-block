@@ -3,6 +3,10 @@ import { axiosBackend  } from "../utils/axios";
 import useToken from "../utils/useToken";
 import styles from '../assets/contract.module.css'
 
+import PropTypes from 'prop-types';
+import RentalContract from "../contracts/RentalContract.json";
+import getWeb3 from "../utils/getWeb3";
+
 import "../assets/contracts.css"
 
 import Card from 'react-bootstrap/Card';
@@ -14,7 +18,9 @@ function Contracts({ smartcontract }) {
 
   const [contracts, setContracts] = useState([])
 
-  const message = "No contracts found."
+  const [noContracts, setNoContracts] = useState(false);
+
+  const message = "You do not have any contracts. You can create a contract on the New Contract page."
 
   useEffect(() => {    
 
@@ -32,16 +38,24 @@ function Contracts({ smartcontract }) {
       });
 
     setContracts(response)
+
+    if (contracts == null) {
+      setNoContracts(true)
+    }
   }
 
   /* only display buttons if the id of the user = tenant id and the contract is pending */
-  const checkButtons = (id, status, contractid) => {
+  const checkButtons = (contract) => {
 
-    if (id == token && status == 'pending') return <Buttons contractid={contractid}></Buttons>;
+    const id = contract.tenantid
+    const status = contract.status
+    const contractid = contract.contractid
+
+    if (id == token && status == 'pending') return <Buttons contract={contract}></Buttons>;
 
     else if (status == 'active') return (
       <div>
-        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid)}>End Contract</button>
+        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contract)}>End Contract</button>
       </div>
     )
 
@@ -49,39 +63,57 @@ function Contracts({ smartcontract }) {
   }
 
   /* update status of one contract */
+  const updateStatus = async(e, status, contract) => {
 
-  const updateStatus = async(e, status, contractid) => {
-    console.log("calling backend with " + contractid + " and status " + status)
-    
+    const contractid = contract.contractid
+    const landlordwallet = contract.landlordwallet
+    const tenantwallet = contract.tenantwallet
+    const monthlyfee = contract.monthlyfee
+
     axiosBackend
       .post('contracts/update', {contractid, status})
-      .then(response => {})
+      .then(response => {
+        alert("Contract updated successfully!")
+        // response.data.contractid
+      })
       .catch(e => {
         console.log(e)
+        alert("Error updating!")
       })
+
+    if (status == 'active') {
+      Transaction(contractid, landlordwallet, tenantwallet, monthlyfee)
+    }
 
     window.location.reload()
   }
 
-  function Buttons( contractid ) {
+  // Send money in transaction upon contract being set as active
+  function Transaction (contractid, landlordwallet, tenantwallet, monthlyfee) {
+  alert("ContractID: " + contractid + " Landlord Wallet: " + landlordwallet + " Tenant Wallet: " + tenantwallet + " fee: " + monthlyfee)
+    // Call smart contract pay rent function to send money
+    smartcontract.methods.payRent(landlordwallet).send({from: tenantwallet, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
+  }
+
+  function Buttons({contract}) {
+
     return ( 
       <div>
-        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid)}>Approve </button>
+        <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contract)}>Approve </button>
 
-        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid.contractid)}>Deny</button>
+        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contract)}>Deny</button>
       </div>
     )
   }  
-
   return (
     <div className="settings">
       <div className="container">
         <div className="row align-items-center my-5">
           <div className="col-lg-8">
             <h1><b>My Contracts</b></h1>
-            <br></br> 
+            <br></br>
             <p>
-              {contracts.length < 1 ? message : ''}
+              {contracts.length < 1 ? message : '' }
             </p>
             {
               contracts.map(contract =>  (
@@ -90,17 +122,18 @@ function Contracts({ smartcontract }) {
               <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                  <label for="landlordwallet">Landlord Wallet:</label> {contract.landlordwallet}&nbsp;&nbsp;
-                  <label for="tenantwallet">Tenant Wallet:</label> {contract.tenantwallet}<br></br>
-                  <label for="startdate">Start Date: </label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
-                  <label for="enddate">End Date:</label> {contract.enddate.split('T')[0]}<br></br>
-                  <label for="monthlyfee">Monthly Fee:</label> {contract.monthlyfee} ETH&nbsp;&nbsp;
-                  <label for="status"><span style={{color: 'var(--alert)', fontWeight: 'bold'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
+                  <label for="landlordwallet"><span style={{color: 'var(--main)'}}>Landlord Wallet:</span></label> <span style={{color: 'var(--lightgray)'}}>{contract.landlordwallet}</span><br></br>
+                  <label for="tenantwallet"><span style={{color: 'var(--main)'}}>Tenant Wallet:</span></label> <span style={{color: 'var(--lightgray)'}}>{contract.tenantwallet}</span><br></br>
+                  <label for="startdate"><span style={{color: 'var(--main)'}}>Start Date: </span></label> {contract.startdate.split('T')[0]}&nbsp;&nbsp;
+                  <label for="enddate"><span style={{color: 'var(--main)'}}>End Date:</span></label> {contract.enddate.split('T')[0]}<br></br>
+                  <label for="monthlyfee"><span style={{color: 'var(--main)'}}>Monthly Fee:</span></label> {contract.monthlyfee} ETH&nbsp;&nbsp;
+                  <label for="status"><span style={{color: 'var(--alert)'}}>Status:</span></label> {contract.status}&nbsp;&nbsp;
                   
                   {
-                    checkButtons(contract.tenantid, contract.status, contract.contractid)
+                    checkButtons(contract)
                   }
-                  </Card.Text>
+
+                </Card.Text>
               </Card.Body>
             </Card>
   
@@ -113,7 +146,7 @@ function Contracts({ smartcontract }) {
 }
 
 /* Proptypes check for if the system data matched expected types during runtime */
-NewContract.propTypes = {
+Contracts.propTypes = {
   smartcontract: PropTypes.any.isRequired
 }
 

@@ -27,7 +27,7 @@ function Home() {
             <h4>Get <b>SMART</b> with your rental contracts.</h4>
             <br></br>
             <h5>
-              <b>ON THE BLOCK</b>, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely, recurring rental payments.
+              <b>ON THE BLOCK</b>, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely rental payments.
             </h5>
             <br></br>
             <a className="infoLink" href="/about">Want more info? <FontAwesomeIcon icon={faArrowAltCircleRight}/></a>

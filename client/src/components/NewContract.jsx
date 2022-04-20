@@ -13,7 +13,7 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
-function NewContract({ smartcontract }) {
+function NewContract() {
 
   const [landlord_addr, setLandlord_addr] = useState();
   const [tenant_addr, setTenant_addr] = useState();
@@ -29,30 +29,6 @@ function NewContract({ smartcontract }) {
 
   const today = new Date().toISOString().split("T")[0]
 
-  useEffect(() => {
-
-    const getWallets = async e => {
-
-      const response = await axiosBackend
-        .get('/users/' + token + '/wallets/', )
-        .then(response => response.data)
-            // alert("Settings loaded successfully")
-            // response.data.contractid
-            // setSettings(response)
-
-        .catch(e => {
-            console.log(e)
-            // alert("Error loading!")
-        });
-
-      setWallets(response)
-      setWalletAddr(response.wallets[0].walletaddr)
-    }    
-
-    getWallets()
-    
-  }, [])
-
   const createContract = async e => {
 
     e.preventDefault()
@@ -67,9 +43,7 @@ function NewContract({ smartcontract }) {
         enddate
       }).then(response => {
 
-        smartcontract.methods.payRent(landlord_addr).send({from: tenant_addr, value: 1000000000000000000 * monthlyfee}).then((error, tranasctionHash)=>{alert(tranasctionHash);});
-
-        alert("Contract submitted successfully with id" + response.data.contractid)
+        alert("Contract submitted successfully!")
         // response.data.contractid
       }).catch(e => {
         console.log(e)
@@ -84,7 +58,7 @@ function NewContract({ smartcontract }) {
         <div className="col-lg-5">
           <h1><span style={{color: 'var(--main)'}}>Start New Contract</span></h1>
           <form onSubmit={createContract}>
-            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" value={walletAddr} onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
+            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
             <input type="text" placeholder="Tenant Account Number" name="tenant_addr" onChange={e => setTenant_addr(e.target.value)}></input><br></br>
             <input type="text" placeholder="Monthly Amount (in ETH)" name="monthlyfee" onChange={e => setMonthlyfee(e.target.value)} ></input><br></br>
             <input type="date" min={today} name="startdate" onChange={e => setStartDate(e.target.value)} ></input><br></br>
@@ -94,16 +68,35 @@ function NewContract({ smartcontract }) {
         </div>
         <div className="col-lg-5">
           <h1> Your Rental Contract </h1>
-          <div className="p">
-            <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between you and your tenant.<br></br>
-            <br></br>
-            <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
-            <br></br>
-            <FontAwesomeIcon icon={faBell}/> Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
-            <br></br>
-            <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+            <div className="p">
+              <ul class="icon">
+                <li>
+                  <FontAwesomeIcon icon={faHome}/> &nbsp;This contract enters you into a rental agreement between you and your tenant.<br></br>
+                </li>
+                <br></br>
+                <li>
+                  <FontAwesomeIcon icon={faDollarSign}/> &nbsp;&nbsp;&nbsp;Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
+                </li>
+                <br></br>
+                <li>
+                  <FontAwesomeIcon icon={faBell}/> &nbsp;&nbsp;Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
+                </li>
+                <br></br>
+                <li>
+                  <FontAwesomeIcon icon={faCheckCircle}/> &nbsp;&nbsp;Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+                </li>
+              </ul>
+            </div>
+            {/* <div className="p">
+              <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between you and your tenant.<br></br>
+              <br></br>
+              <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
+              <br></br>
+              <FontAwesomeIcon icon={faBell}/> Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
+              <br></br>
+              <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+            </div> */}
           </div>
-        </div>
         <div className="col-lg-1"></div>
       </div>
     </div>
@@ -111,8 +104,8 @@ function NewContract({ smartcontract }) {
 }
 
 /* Proptypes check for if the system data matched expected types during runtime */
-NewContract.propTypes = {
+/*NewContract.propTypes = {
   smartcontract: PropTypes.any.isRequired
-}
+}*/
 
 export default NewContract;
