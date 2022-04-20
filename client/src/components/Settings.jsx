@@ -42,7 +42,7 @@ function Settings() {
       setFname(response.settings[0].firstname)
       setLname(response.settings[0].lastname)
       setUname(response.settings[0].username)
-
+      setPword(response.settings[0].password)
     }    
 
     getSettings()

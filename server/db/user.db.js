@@ -28,7 +28,7 @@ const getWalletDB = async(userID) => {
 // ADDED BY CLAIRE - Update user settings when a user edits their settings and submits the changes
 const getUserInfoDB = async(userID) => {
     try {
-        const query = 'SELECT firstname, lastname, username FROM ontheblock_db.users WHERE userID = ?'
+        const query = 'SELECT firstname, lastname, username, password FROM ontheblock_db.users WHERE userID = ?'
         const result = await pool.query(query, [userID])
 
         return result[0]
