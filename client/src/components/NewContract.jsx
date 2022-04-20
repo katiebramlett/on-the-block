@@ -93,6 +93,25 @@ function NewContract() {
         <div className="col-lg-5">
           <h1> Your Rental Contract </h1>
             <div className="p">
+              <ul class="icon">
+                <li>
+                  <FontAwesomeIcon icon={faHome}/> &nbsp;This contract enters you into a rental agreement between you and your tenant.<br></br>
+                </li>
+                <br></br>
+                <li>
+                  <FontAwesomeIcon icon={faDollarSign}/> &nbsp;&nbsp;&nbsp;Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
+                </li>
+                <br></br>
+                <li>
+                  <FontAwesomeIcon icon={faBell}/> &nbsp;&nbsp;Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
+                </li>
+                <br></br>
+                <li>
+                  <FontAwesomeIcon icon={faCheckCircle}/> &nbsp;&nbsp;Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
+                </li>
+              </ul>
+            </div>
+            {/* <div className="p">
               <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between you and your tenant.<br></br>
               <br></br>
               <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
@@ -100,7 +119,7 @@ function NewContract() {
               <FontAwesomeIcon icon={faBell}/> Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
               <br></br>
               <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
-            </div>
+            </div> */}
           </div>
         <div className="col-lg-1"></div>
       </div>

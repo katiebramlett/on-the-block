@@ -68,7 +68,7 @@ function Contracts({ smartcontract }) {
       })
 
     if (status = 'active') {
-      // Transaction(contractid, landlordwallet, tenantwallet, monthlyfee)
+      Transaction(contractid, landlordwallet, tenantwallet, monthlyfee)
     }
 
     window.location.reload()

@@ -18,7 +18,7 @@ function About() {
     <Popover className="popover" id="popover-basic">
       <Popover.Header as="h3"><b>How It Works</b></Popover.Header>
       <Popover.Body>
-        On the Block, our Ethereum decentralized application, allows users to easily interact with a smart contract to set up timely, recurring monthly payments. By utilizing blockchain technology, specifically an Ethereum-based application, we are alleviating the tedious and complicated process of paying rent to a landlord.
+        On the Block, our Ethereum decentralized application, allows users to easily interact with a smart contract to set up timely rental payments. By utilizing blockchain technology, specifically an Ethereum-based application, we are alleviating the tedious and complicated process of paying rent to a landlord.
       </Popover.Body>
     </Popover>
   );
@@ -47,7 +47,7 @@ function About() {
         1. Start New Rental Contracts<br></br>
         2. Check Existing Rental Contracts<br></br>
         3. Get Easy Notifications and Alerts<br></br>
-        4. Set Up Timely Recurring Payments<br></br>
+        4. Set Up Timely Payments<br></br>
         5. Terminate Existing Contracts<br></br>
       </Popover.Body>
     </Popover>

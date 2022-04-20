@@ -2,7 +2,7 @@
 
 .approvebutton {
     border: none;
-    background-color: rgba(0, 128, 0, 0.806);
+    background-color: var(--green);
     text-align: center;
     outline: none;
     color: var(--white);
@@ -16,7 +16,7 @@
 
 .denyButton {
     border: none;
-    background-color: rgba(255, 0, 0, 0.732);
+    background-color: var(--alert);
     text-align: center;
     outline: none;
     color: var(--white);

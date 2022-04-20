@@ -19,6 +19,14 @@
     font-family: var(--font);
 }
 
+ul.icon {
+    list-style-type: none;
+}
+
+ul.icon li {
+    text-indent: -2.0em;
+}
+
 /*
 .newcontract_container {
     position: fixed;
