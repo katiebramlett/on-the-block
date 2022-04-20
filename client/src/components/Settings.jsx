@@ -99,6 +99,21 @@ function Settings() {
         alert("Error submitting!")
       })
 
+    setWalletAddr(walletID)
+
+    const walletaddr = walletID
+
+    const updateWallet = axiosBackend
+      .post('/users/' + token + '/updateWallet', {
+        walletaddr
+      }).then(response => {
+          alert("Wallet updated successfully")
+          // response.data.contractid
+      }).catch(e => {
+        console.log(e)
+        alert("Error submitting!")
+      })
+
       setEdit(false)
   }
 
