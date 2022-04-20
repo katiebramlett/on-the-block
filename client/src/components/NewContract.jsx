@@ -43,7 +43,7 @@ function NewContract() {
         enddate
       }).then(response => {
 
-        alert("Contract submitted successfully between " + response.data.landlord_addr + " and " + response.data.tenant_addr + " with amount " + response.data.monthlyfee + " for dates " + response.data.startdate + " to " + response.data.enddate)
+        alert("Contract submitted successfully!")
         // response.data.contractid
       }).catch(e => {
         console.log(e)

@@ -34,4 +34,3 @@ router.get('/users/:userid', getUserSettingsInfo)
 router.post('/users/:userid', postUserSettings) // not sure these are right, check!
 
 module.exports = router;
-
