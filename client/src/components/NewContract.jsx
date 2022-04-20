@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import PropTypes from 'prop-types';
 import RentalContract from "../contracts/RentalContract.json";
 import getWeb3 from "../utils/getWeb3";
@@ -24,7 +24,34 @@ function NewContract({ smartcontract }) {
   const [message, setMessage] = useState();
   const {token, setToken } = useToken();
 
+  const [wallets, setWallets] = useState([])
+  const [walletAddr, setWalletAddr] = useState();
+
   const today = new Date().toISOString().split("T")[0]
+
+  useEffect(() => {
+
+    const getWallets = async e => {
+
+      const response = await axiosBackend
+        .get('/users/' + token + '/wallets/', )
+        .then(response => response.data)
+            // alert("Settings loaded successfully")
+            // response.data.contractid
+            // setSettings(response)
+
+        .catch(e => {
+            console.log(e)
+            // alert("Error loading!")
+        });
+
+      setWallets(response)
+      setWalletAddr(response.wallets[0].walletaddr)
+    }    
+
+    getWallets()
+    
+  }, [])
 
   const createContract = async e => {
 
@@ -57,7 +84,7 @@ function NewContract({ smartcontract }) {
         <div className="col-lg-5">
           <h1><span style={{color: 'var(--main)'}}>Start New Contract</span></h1>
           <form onSubmit={createContract}>
-            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
+            <input type="text" placeholder="Landlord Account Number" name="landlord_addr" value={walletAddr} onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
             <input type="text" placeholder="Tenant Account Number" name="tenant_addr" onChange={e => setTenant_addr(e.target.value)}></input><br></br>
             <input type="text" placeholder="Monthly Amount (in ETH)" name="monthlyfee" onChange={e => setMonthlyfee(e.target.value)} ></input><br></br>
             <input type="date" min={today} name="startdate" onChange={e => setStartDate(e.target.value)} ></input><br></br>
@@ -68,11 +95,11 @@ function NewContract({ smartcontract }) {
         <div className="col-lg-5">
           <h1> Your Rental Contract </h1>
           <div className="p">
-            <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between tenant and landlord.<br></br>
+            <FontAwesomeIcon icon={faHome}/> This contract enters you into a rental agreement between you and your tenant.<br></br>
             <br></br>
-            <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum account addresses for the receiver and sender to set up this contract.<br></br>
+            <FontAwesomeIcon icon={faDollarSign}/> Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
             <br></br>
-            <FontAwesomeIcon icon={faBell}/> Upon submission, the other party of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
+            <FontAwesomeIcon icon={faBell}/> Upon submission, the tenant of your rental agreement will be notified of the contract and have the option to accept or deny.<br></br>
             <br></br>
             <FontAwesomeIcon icon={faCheckCircle}/> Subsequently, if accepted, the transaction will be sent and recorded.<br></br>
           </div>

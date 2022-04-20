@@ -8,7 +8,7 @@ import "../assets/contracts.css"
 import Card from 'react-bootstrap/Card';
 import axios from "axios";
 
-function Contracts() {
+function Contracts({ smartcontract }) {
 
   const {token, setToken } = useToken();
 
@@ -67,6 +67,7 @@ function Contracts() {
     return ( 
       <div>
         <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contractid.contractid)}>Approve </button>
+
         <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contractid.contractid)}>Deny</button>
       </div>
     )
@@ -80,7 +81,7 @@ function Contracts() {
             <h1><b>My Contracts</b></h1>
             <br></br> 
             <p>
-              {contracts.length < 0 ? '' : message}
+              {contracts.length < 1 ? message : ''}
             </p>
             {
               contracts.map(contract =>  (
@@ -99,18 +100,21 @@ function Contracts() {
                   {
                     checkButtons(contract.tenantid, contract.status, contract.contractid)
                   }
-
-                </Card.Text>
+                  </Card.Text>
               </Card.Body>
             </Card>
   
             ))}
-
           </div>
         </div>
       </div>
     </div>
   );
+}
+
+/* Proptypes check for if the system data matched expected types during runtime */
+NewContract.propTypes = {
+  smartcontract: PropTypes.any.isRequired
 }
 
 export default Contracts;

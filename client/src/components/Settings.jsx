@@ -1,25 +1,78 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../assets/settings.css"
+
+import { axiosBackend  } from "../utils/axios";
+import useToken from "../utils/useToken";
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-// make this a form 
-
 function Settings() {
 
+  const {token, setToken} = useToken();
+
+  const [settings, setSettings] = useState([])
+  const [wallets, setWallets] = useState([])
   // define functions and state variables 
-  const [firstname, setFirstname] = useState();
-  const [lastname, setLastname] = useState();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
-  const [confirmPassword, setconfirmPassword] = useState();
+  const [fname, setFirstname] = useState();
+  const [lname, setLastname] = useState();
+  const [uname, setUsername] = useState();
+  const [pword, setPassword] = useState();
+  const [confirmPword, setconfirmPassword] = useState();
   const [walletID, setWalletID] = useState();
   const [edit, setEdit] = useState(false);
+  const [walletAddr, setWalletAddr] = useState();
 
+  useEffect(() => {
+
+    const getSettings = async e => {
+
+      const response = await axiosBackend
+        .get('/users/' + token, )
+        .then(response => response.data)
+            // alert("Settings loaded successfully")
+            // response.data.contractid
+            // setSettings(response)
+
+        .catch(e => {
+            console.log(e)
+            // alert("Error loading!")
+        });
+
+      setSettings(response)
+      setFirstname(response.settings[0].firstname)
+      setLastname(response.settings[0].lastname)
+      setUsername(response.settings[0].username)
+
+    }    
+
+    getSettings()
+
+    const getWallets = async e => {
+
+      const response = await axiosBackend
+        .get('/users/' + token + '/wallets/', )
+        .then(response => response.data)
+            // alert("Settings loaded successfully")
+            // response.data.contractid
+            // setSettings(response)
+
+        .catch(e => {
+            console.log(e)
+            // alert("Error loading!")
+        });
+
+      setWallets(response)
+      setWalletAddr(response.wallets[0].walletaddr)
+    }    
+
+    getWallets()
+    
+  }, [])
 
   const editSettings = async e => {
-    //e.preventDefault() 
+    
+    // e.preventDefault() 
 
     setEdit(true)
 
@@ -28,6 +81,30 @@ function Settings() {
     background: '#2f2f2f',
     color: '#fff',
   }
+
+  const updateSettings = async e => {
+    const settings = axiosBackend
+      .post('/users/' + token, {
+        fname,
+        lname,
+        uname,
+        pword
+      }).then(response => {
+          alert("Settings updated successfully")
+          // response.data.contractid
+      }).catch(e => {
+        console.log(e)
+        alert("Error submitting!")
+      })
+
+      setEdit(false)
+  }
+
+  const cancelButton = () => {
+    setEdit(false)
+  }
+
+  // If not in edit mode
   if (!edit) {
     return (
       <div className="settings">
@@ -36,55 +113,55 @@ function Settings() {
             <div className="col-lg-8">
               <h1><b>Profile & Settings</b></h1>
               <br></br>
-              <Card className="settings-cards" style={{ width: '65rem', height: '10' }}>
+              <Card className="settings-cards" style={{ width: '50rem', height: '10' }}>
                 <Card.Body>
                   <Card.Title>User Settings</Card.Title>
                   <Card.Text>
-                    <label for="fname"><b>First Name: </b></label>&nbsp;&nbsp;
-                    <label for="lname"><b>Last Name: </b></label>
+                    <label for="fname"><b>First Name: </b></label> {fname}&nbsp;&nbsp;
+                    <label for="lname"><b>Last Name: </b></label> {lname}
                   </Card.Text>
                 </Card.Body>
               </Card>
               <br></br>
-              <Card className="settings-cards" style={{ width: '65rem', height: '10' }}>
+              <Card className="settings-cards" style={{ width: '50rem', height: '10' }}>
                 <Card.Body>
                   <Card.Title>Account Settings</Card.Title>
                   <Card.Text>
-                    <label for="uname"><b>Username: </b></label>&nbsp;&nbsp;
-                    <label for="pword"><b>Password: </b></label><br></br>
+                    <label for="uname"><b>Username: </b></label> {uname}&nbsp;&nbsp;
+                    {/* <label for="pword"><b>Password: </b></label><br></br> */}
                   </Card.Text>
                 </Card.Body>
               </Card>
               <br></br>
-              <Card className="settings-cards" style={{ width: '65rem', height: '10' }}>
+              <Card className="settings-cards" style={{ width: '50rem', height: '10' }}>
                 <Card.Body>
-                  <Card.Title>Connect Web3 Wallet</Card.Title>
+                  <Card.Title>Web3 Wallet</Card.Title>
                   <Card.Text>
-                  <label for="walletID"><b>Wallet ID: </b></label><br></br>
+                  <label for="walletID"><b>Wallet ID: </b></label> {walletAddr}<br></br>
                   </Card.Text>
                 </Card.Body>
               </Card>
               <br></br>
-              <button onClick={editSettings} className="settings-button1">Edit</button>
+              <button onClick={editSettings} className="settings-button1">Edit Settings</button>
             </div>
           </div>
         </div>
       </div>
     );
   }
-//adding new return 
+  // In edit mode
   return (
     <div className="settings">
         <div className="container">
           <div className="row align-items-center my-5">
-              <form onSubmit={editSettings}>
+              <form onSubmit={updateSettings}>
                   <h1>Edit Profile Settings</h1>
                   <label>
                       {/* <p>firstname</p> */}
                       <input 
                           type="text" 
                           onChange={e => setFirstname(e.target.value)} 
-                          placeholder="firstname">
+                          value={fname}>
                       </input>
                   </label>
                   <br></br>
@@ -93,7 +170,7 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setLastname(e.target.value)} 
-                          placeholder="lastname">
+                          value={lname}>
                       </input>
                   </label>
                   <br></br>
@@ -102,7 +179,7 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setUsername(e.target.value)} 
-                          placeholder="username">
+                          value={uname}>
                       </input>
                   </label>
                   <br></br>
@@ -129,7 +206,7 @@ function Settings() {
                       <input 
                           type="text" 
                           onChange={e => setWalletID(e.target.value)} 
-                          placeholder="walletID">
+                          value={walletAddr}>
                       </input>
                   </label>
                   <div>
@@ -141,7 +218,7 @@ function Settings() {
                   <div>
                       <button 
                         className="settings-button2"
-                        type="submit">Cancel
+                        onClick={cancelButton}>Cancel
                       </button>
                   </div>
               </form>
