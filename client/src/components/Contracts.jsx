@@ -14,7 +14,6 @@ function Contracts() {
 
   const [contracts, setContracts] = useState([])
 
-
   const message = "No contracts found."
 
   useEffect(() => {    
@@ -79,8 +78,10 @@ function Contracts() {
         <div className="row align-items-center my-5">
           <div className="col-lg-8">
             <h1><b>My Contracts</b></h1>
-            <br></br>
-
+            <br></br> 
+            <p>
+              {contracts.length < 0 ? '' : message}
+            </p>
             {
               contracts.map(contract =>  (
 
