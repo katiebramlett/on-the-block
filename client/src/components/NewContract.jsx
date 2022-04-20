@@ -60,7 +60,7 @@ function NewContract() {
           <form onSubmit={createContract}>
             <input type="text" placeholder="Landlord Account Number" name="landlord_addr" onChange={e => setLandlord_addr(e.target.value)} ></input><br></br>
             <input type="text" placeholder="Tenant Account Number" name="tenant_addr" onChange={e => setTenant_addr(e.target.value)}></input><br></br>
-            <input type="text" placeholder="Monthly Amount (in ETH)" name="monthlyfee" onChange={e => setMonthlyfee(e.target.value)} ></input><br></br>
+            <input type="text" placeholder="Amount (in ETH)" name="monthlyfee" onChange={e => setMonthlyfee(e.target.value)} ></input><br></br>
             <input type="date" min={today} name="startdate" onChange={e => setStartDate(e.target.value)} ></input><br></br>
             <input type="date" name="enddate" min={today} onChange={e => setEndDate(e.target.value)} ></input><br></br>
             <input type="submit" value="Submit Contract"></input>
@@ -75,7 +75,7 @@ function NewContract() {
                 </li>
                 <br></br>
                 <li>
-                  <FontAwesomeIcon icon={faDollarSign}/> &nbsp;&nbsp;&nbsp;Please specify the Ethereum wallet address for your tenant, the monthly amount (in ETH), and desired dates to set up this contract.<br></br>
+                  <FontAwesomeIcon icon={faDollarSign}/> &nbsp;&nbsp;&nbsp;Please specify the Ethereum wallet address for your tenant, the amount (in ETH), and desired dates to set up this contract.<br></br>
                 </li>
                 <br></br>
                 <li>
