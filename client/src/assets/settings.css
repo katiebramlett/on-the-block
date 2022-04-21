@@ -12,10 +12,10 @@
     font-family: var(--font);
 }
 
-.settings-button1 {
+.settings-button {
     border: none;
     background: none;
-    display: block;
+    display: inline;
     text-align: center;
     border: 1px solid var(--main);
     padding: 10px 32px;
@@ -24,29 +24,10 @@
     border-radius: 24px;
     cursor: pointer;
     font-family: var(--font);
+    margin-bottom: 30px;
 }
 
-.settings-button1:hover {
-    background-color: var(--main);
-    font-family: var(--font);
-}
-
-.settings-button2 {
-    border: none;
-    background: none;
-    display: block;
-    text-align: center;
-    border: 1px solid var(--main);
-    padding: 10px 32px;
-    outline: none;
-    color: var(--white);
-    border-radius: 24px;
-    cursor: pointer;
-    font-family: var(--font);
-    margin: 40px;
-}
-
-.settings-button2:hover {
+.settings-button:hover {
     background-color: var(--main);
     font-family: var(--font);
 }

@@ -22,6 +22,7 @@ h5 {
     color: var(--white);
     font-weight: 500;
     font-family: var(--font);
+    line-height: 40px;
 }
 
 p {
@@ -38,7 +39,6 @@ label {
 
 b {
     color: var(--main);
-    font-family: var(--font);
 }
 
 .infoLink {
