@@ -101,7 +101,7 @@ function Contracts({ smartcontract }) {
       <div>
         <button className={styles.approvebutton} onClick={e => updateStatus(e, "active", contract)}>Approve </button>
 
-        <button className={styles.denyButton} onClick={e => updateStatus(e, "denied", contract)}>Deny</button>
+        <button className={styles.denyButton} onClick={e => updateStatus(e, "terminated", contract)}>Deny</button>
       </div>
     )
   }  
