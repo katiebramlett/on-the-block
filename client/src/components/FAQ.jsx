@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import "../assets/faq.css"
 
@@ -7,7 +8,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 function FAQ() {
 
-    /* WEB SCRAPING
+    // WEB SCRAPING
     const fetch = require("node-fetch");
     const cheerio = require("cheerio");
     const fs = require("fs");
@@ -35,7 +36,7 @@ function FAQ() {
     // invoking the main function
     scrapeData();
     */
-
+    /*
     return (
         <div className="faq">
             <div className="container">
@@ -67,4 +68,4 @@ function FAQ() {
 }
   
 export default FAQ;
-  
+*/

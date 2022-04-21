@@ -1,0 +1,28 @@
+@import './root.css';
+
+.approvebutton {
+    border: none;
+    background-color: var(--green);
+    text-align: center;
+    outline: none;
+    color: var(--white);
+    cursor: pointer;
+    font-family: var(--font);
+    margin-right: 15px;
+    width: 120px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 24px;
+}
+
+.denyButton {
+    border: none;
+    background-color: var(--alert);
+    text-align: center;
+    outline: none;
+    color: var(--white);
+    cursor: pointer;
+    font-family: var(--font);
+    width: 120px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 24px;
+}

@@ -2,36 +2,6 @@
 
 @import './root.css';
 
-/*
-.newcontract_container {
-    position: fixed;
-    margin-top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 1px solid var(--main);
-    border-radius: 12px;
-    padding-left: 30px;
-    max-width: 800px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.newcontract_container .row {
-    padding-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.newcontract_container .col {
-    flex: 25%;
-    padding: 20px;
-    padding-top: 15px;
-    margin-left: 10px;
-    max-width: 350px;
-    width: 100%;
-}
-*/
-
 .helpLink {
     color: var(--white);
     font-weight: bold;
@@ -47,6 +17,14 @@
     color: var(--white);
     padding-top: 30px;
     font-family: var(--font);
+}
+
+ul.icon {
+    list-style-type: none;
+}
+
+ul.icon li {
+    text-indent: -2.0em;
 }
 
 /*
@@ -89,7 +67,6 @@ h1 {
     color: var(--white);
     font-weight: 500px;
     font-size: 30px;
-    margin-left: 5px;
     font-weight: bold;
 }
 

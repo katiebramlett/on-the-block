@@ -1,7 +1,7 @@
 // business layer abstraction between DB and client calls
 
 const { createPoolCluster } = require("mysql2");
-const { loginDB, createUserDB, addUserWalletDB, getWalletDB }  = require("../db/user.db");
+const { loginDB, createUserDB, addUserWalletDB, getWalletDB, getUserInfoDB, updateUserSettingsDB, updateWalletDB }  = require("../db/user.db");
 
 const verifyLogin = async(username, password) => {
     try {
@@ -28,6 +28,14 @@ const getWallet = async(userID) => {
     }
 };
 
+const updateWallet = async(userID, walletaddr) => {
+    try {
+        return await updateWalletDB(userID, walletaddr)
+    } catch(e) {
+        throw new Error(e.message)
+    }
+}
+
 const createUser = async(firstname, lastname, username, password) => {
     try {
         const result = await createUserDB(firstname, lastname, username, password);
@@ -45,9 +53,29 @@ const addUserWallet = async(userid, walletaddr) => {
     }
 };
 
+// ADDED BY CLAIRE
+const getUserInfo = async(userid) => {
+    try {
+        return await getUserInfoDB(userid);
+    } catch(e) {
+        throw new Error(e.message);
+    }
+};
+
+const updateUserSettings = async(userid, fname, lname, uname, pword) => {
+    try {
+        return await updateUserSettingsDB(userid, fname, lname, uname, pword);
+    } catch(e) {
+        throw new Error(e.message);
+    }
+};
+
 module.exports = {
     verifyLogin,
     getWallet,
     createUser,
-    addUserWallet
+    addUserWallet,
+    getUserInfo,
+    updateUserSettings,
+    updateWallet
 };

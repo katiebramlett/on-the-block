@@ -1,0 +1,9 @@
+
+.notifbutton {
+    color: var(--white);
+    font-family: var(--font);
+    margin-top: 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}

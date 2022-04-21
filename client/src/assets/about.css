@@ -4,14 +4,11 @@
     color: var(--white);
 }
 
-.card-text {
-    color: var(--white);
-    font-family: var(--font);
-}
-
 .about-cards {
     background-color: var(--gray);
     border: solid var(--main);
+    font-family: var(--font);
+    line-height: 40px;
     font-family: var(--font);
 }
 
@@ -32,9 +29,9 @@
 
 .about-buttons:hover {
     background-color: var(--main);
-    font-family: var(--font);
 }
 
 .popover {
     font-family: var(--font);
+    line-height: 30px;
 }
