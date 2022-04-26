@@ -1,37 +1,38 @@
-## Welcome to GitHub Pages
+## Welcome to On The Block
 
-You can use the [editor on GitHub](https://github.com/katiebramlett/on-the-block/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### What is On The Block?
+On the Block, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely rental payments.<br>
+Built on Ethereum smart contract technology, On The Block offers numerous benefits to landlords and tenants, including traceability, security, efficiency, fairness, and transparency.<br>
+Real-world rental contracts often go through a third party intermediary to exchange payment from the tenant to the landlord, which leaves room for error with safety, security, and fairness. With On The Block, landlords and tenants will be guaranteed a quick, safe, and fair contract.<br>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+On The Block offers user-friendly and efficent features:
+1. Start New Rental Contracts
+2. Check Existing Rental Contracts
+3. Terminate Existing Rental Contracts
+4. Get Easy Notifications
 
-### Markdown
+Fueled by the heightened demand for blockchain technology, the Ethereum smart contracts market is rapidly growing. It’s easier than ever before to integrate blockchain technology with user-friendly applications. This applies beyond just On The Block. There are endless possibilities of where our technology could be used beyond rental agreements.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Get SMART with your rental contracts, and visit On The Block today.
 
-```markdown
-Syntax highlighted code block
+### Our Team
+1. Katie Bramlett
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+2. Genevieve Flynn
 
-**Bold** and _Italic_ and `Code` text
+3. Claire Furtick
 
-[Link](url) and ![Image](src)
-```
+4. Ada Kilic
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Project Documentation
+1. Final Project Presentation Video
+2. Final Commercial Video
+3. [Final Report](../project-docs/Team%205%20Final%20Report.pdf)
+4. [Final Presentation](../project-docs/Team%205%20Final%20Presentation.pdf)
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/katiebramlett/on-the-block/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Additional Resources
+1. [Resources & Notes](../project-docs/resources)
+2. [Project Diagrams](../project-docs/diagrams)
+3. [Overall Project Documentation](../project-docs)
