@@ -35,8 +35,8 @@ Hi I'm Genevieve! I grew up southern New Hampshire with a large family (11) but 
 ### Final Project Documentation
 1. Final Project Presentation Video
 2. Final Commercial Video
-3. [Final Report](../project-docs/Team%205%20Final%20Report.pdf)
-4. [Final Presentation](../project-docs/Team%205%20Final%20Presentation.pdf)
+3. [Final Report](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%20Report.pdf)
+4. [Final Presentation](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%20Presentation.pdf)
 
 ### Additional Documentation
 1. [Resources & Notes](https://github.com/katiebramlett/on-the-block/tree/main/project-docs/resources)
