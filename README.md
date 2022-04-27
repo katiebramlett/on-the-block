@@ -12,7 +12,7 @@ View our webpage for **On The Block** [here](https://katiebramlett.github.io/on-
 
 1. Download the On The Block repository
 2. Install node.js<br>
-(Node.js download found here: [https://nodejs.org/en/](https://nodejs.org/en/))
+Node.js download found [here](https://nodejs.org/en/).
 3. Install Truffle<br>
 Truffle is the development environment and testing framework we will use to deploy our smart contract.
 ```
