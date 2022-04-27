@@ -42,11 +42,13 @@ migrate
 In one terminal, run the client. This should automatically open the web browser where it is being locally deployed (localhost:3000). If you have Metamask, open this in an incognitio browser so as not to confuse the networks.
 ```
 cd client
+npm install
 npm run start
 ```
 In the other terminal, run the server:
 ```
 cd server
+npm install
 npm run start
 ```
 9. Create an account to visit On The Block. Add a new wallet from Ganache to your Settings page, and get started with setting up your first rental contract.
