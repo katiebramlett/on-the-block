@@ -1,6 +1,6 @@
 ## Welcome to On The Block
 
-<img src="https://github.com/katiebramlett/on-the-block/blob/main/docs/assets/OTB_LOGO.png" alt="On The Block Logo" width="300"/>
+<img src="assets/OTB_LOGO.png" alt="On The Block Logo" width="300"/>
 
 ### What is On The Block?
 **On the Block**, our Ethereum-based decentralized application, is a streamlined payment portal which can be used to set up timely rental payments.<br>
@@ -41,9 +41,9 @@ I am currently pursuing a B.S. degree in Computer Science and Economics at the G
 1. Final Project Presentation Video
 2. Final Commercial Video
 3. Final Report
-4. [Final Presentation](https://github.com/katiebramlett/on-the-block/tree/main/project-docs/Team%205%20Final%20Presentation.pdf)
+4. [Final Presentation](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%20Presentation.pdf)
 
 ### Additional Documentation
-1. [Resources & Notes](https://github.com/katiebramlett/on-the-block/tree/main/project-docs/resources)
-2. [Project Diagrams](https://github.com/katiebramlett/on-the-block/tree/main/project-docs/diagrams)
-3. [Project Documentation](https://github.com/katiebramlett/on-the-block/tree/main/project-docs)
+1. [Resources & Notes](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/resources)
+2. [Project Diagrams](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/diagrams)
+3. [Project Documentation](https://github.com/katiebramlett/on-the-block/blob/main/project-docs)
