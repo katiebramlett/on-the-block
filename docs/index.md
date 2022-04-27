@@ -7,12 +7,12 @@
 
 Real-world rental contracts often go through a third party intermediary to exchange payment from the tenant to the landlord, which leaves room for error with safety, security, and fairness. Built on Ethereum smart contract technology, **On The Block** offers numerous benefits to landlords and tenants, including traceability, security, efficiency, fairness, and transparency. With **On The Block**, landlords and tenants will be guaranteed a quick, safe, and fair contract.<br>
 
-On The Block offers user-friendly and efficent features:<br>
+**On The Block** offers user-friendly and efficent features:<br>
 <img src="assets/FEATURES.png" alt="On The Block Features" width="600"/>
 
 Fueled by the heightened demand for blockchain technology, the Ethereum smart contracts market is rapidly growing. It’s easier than ever before to integrate blockchain technology with user-friendly applications. This applies beyond just **On The Block**. There are endless possibilities of where our technology could be used beyond rental agreements.
 
-Get **SMART** with your rental contracts, and visit On The Block today.
+Get **SMART** with your rental contracts, and visit **On The Block** today.
 
 ### Our Team
 #### Katie Bramlett
