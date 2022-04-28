@@ -47,3 +47,5 @@ I am currently pursuing a B.S. degree in Computer Science and Economics at the G
 1. [Resources & Notes](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/resources)
 2. [Project Diagrams](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/diagrams)
 3. [Project Documentation](https://github.com/katiebramlett/on-the-block/blob/main/project-docs)
+
+<img src="assets/TEAM.png" alt="On The Block Team" width="600"/>
