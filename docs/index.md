@@ -40,7 +40,7 @@ I am currently pursuing a B.S. degree in Computer Science and Economics at the G
 ### Final Project Documentation
 1. Final Project Presentation Video
 2. Final Commercial Video
-3. Final Report
+3. [Final Report](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%Report.pdf)
 4. [Final Presentation](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%20Presentation.pdf)
 
 ### Additional Documentation
