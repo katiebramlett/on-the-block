@@ -38,8 +38,8 @@ Hi I'm Ada!<br>
 I am currently pursuing a B.S. degree in Computer Science and Economics at the George Washington University. My interests in CS are particularly in Artificial Intelligence (AI) and Machine Learning (ML). Also I love traveling, mediterranean food, dancing, and art! In my free time I love spending time with my friends and family. I am also very passionate about photography and love to create magical photographs! Lastly, I will be completing my masters at GWU and working part time at the Federal Reserve Board in DC.<br>
 
 ### Final Project Documentation
-1. Final Project Presentation Video
-2. Final Commercial Video
+1. [Final Project Presentation Video](https://youtu.be/Z2pv7gzZQYU)
+2. [Final Commercial Video](https://youtu.be/NqxQ9MUB6dc)
 3. [Final Report](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%20Report.pdf)
 4. [Final Presentation](https://github.com/katiebramlett/on-the-block/blob/main/project-docs/Team%205%20Final%20Presentation.pdf)
 
